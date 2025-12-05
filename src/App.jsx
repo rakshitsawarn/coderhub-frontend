@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Languages from "./pages/Languages";
 import Courses from "./pages/Courses";
 
@@ -11,8 +11,8 @@ import JavaScript from "./pages/Javascript";
 import Python from "./pages/Python";
 
 import DailyQuiz from "./pages/DailyQuiz";
-import PremiumProjects from "./pages/premium_projects";
-import DailyQuizIDE from "./pages/dailyquizide";
+import PremiumProjects from "./pages/PremiumProjects";
+import DailyQuizIDE from "./pages/DailyQuizIDE";
 
 
 
@@ -25,9 +25,9 @@ import Advanced from "./Python/Advanced";
 import Practice from "./Python/Practice";
 import Projects from "./Python/Projects";
 import Roadmap from "./Python/Roadmap";
-import Interview from "./Python/interview-questions";
+import Interview from "./Python/Interview";
 import PracticeIDE from "./Python/PracticeIDE";
-import CodeIDE from "./pages/codeIDE";
+import CodeIDE from "./pages/CodeIDE";
 import PracticeSolve from "./pages/PracticeSolve";
 
 

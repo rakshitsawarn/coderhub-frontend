@@ -3,7 +3,7 @@ import axios from "axios";
 import "/src/CSS files/DailyQuiz.css";
 import { Link } from "react-router-dom";
 
-import CodeIDE from "./codeIDE";
+import CodeIDE from "./CodeIDE";
 import {
   Brain,
   Clock,
