@@ -23,7 +23,7 @@
     "react": "^19.1.1",
     "react-calendar-heatmap": "^1.10.0",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.4",
+    "react-router-dom": "^7.10.1",
     "react-tooltip": "^5.30.0",
     "serve": "^14.2.5",
     "tfjs": "^0.6.0"
