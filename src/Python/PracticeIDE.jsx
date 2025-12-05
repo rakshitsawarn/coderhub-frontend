@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CodeIDE from "/src/pages/codeIDE"; 
+import CodeIDE from "/src/pages/CodeIDE"; 
 import "/src/Python CSS/PracticeIDE.css";
 
 function PracticeIDE() {
