@@ -1,7 +1,7 @@
 // File: CodeIDE.jsx
 import React, { useState, useEffect, useRef } from "react";
 import Editor from "@monaco-editor/react";
-import "/src/CSS files/CodeIDE.css";
+import "/src/CSS files/codeIDE.css";
 
 const languageMap = {
   C: 50,
