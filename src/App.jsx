@@ -32,24 +32,24 @@ import PracticeSolve from "./pages/PracticeSolve";
 
 
 import Basics_java from "./Java/Basics_java"
-import IntermediateJava from "./Java/intermediate_java"
-import AdvanceJava from "./Java/Advance_java"
-import ProjectsJava from "./Java/Projects_java"
-import PracticeJava from "./Java/Practice_java"
-import InterviewQ from "./Java/interview-questions_java";
+import IntermediateJava from "./Java/IntermediateJava"
+import AdvanceJava from "./Java/AdvanceJava"
+import ProjectsJava from "./Java/ProjectsJava"
+import PracticeJava from "./Java/PracticeJava"
+import InterviewQ from "./Java/InterviewQ";
 import LearningRoadmap from "./Java/LearningRoadmap_java"
 
 
 
 
-import Basics_js from "./JavaScript/basics_js";
-import Intermediate_js from "./JavaScript/intermediate_js"
-import Advance_js from "./JavaScript/advanced_js"
-import Practice_js from "./JavaScript/practice_js"
-import Projects_js from "./JavaScript/projects_js"
-import Learning_Roadmap_js from "./JavaScript/learning_roadmap_js"
-import Interview_Questions_js from "./JavaScript/interview_questions_js"
-import ScheduleInterview from "./pages/schedule_interview";
+import Basics_js from "./JavaScript/Basics_js";
+import Intermediate_js from "./JavaScript/Intermediate_js"
+import Advance_js from "./JavaScript/Advance_js"
+import Practice_js from "./JavaScript/Practice_js"
+import Projects_js from "./JavaScript/Projects_js"
+import Learning_Roadmap_js from "./JavaScript/Learning_Roadmap_js"
+import Interview_Questions_js from "./JavaScript/Interview_Questions_js"
+import ScheduleInterview from "./pages/ScheduleInterview";
 
 
 
