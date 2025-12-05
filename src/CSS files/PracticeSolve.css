@@ -1,0 +1,618 @@
+/* ==================== GLOBAL RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== CONTAINER ==================== */
+.practice-solve-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  overflow: hidden;
+}
+
+/* ==================== QUESTION PANEL (LEFT) ==================== */
+.question-panel-split {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 12px 20px;
+  margin: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  font-size: 18px;
+}
+
+.question-header-split {
+  padding: 0 30px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-top-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.question-title-split {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  flex: 1;
+}
+
+.difficulty-badge-split {
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.question-stats-split {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-item-split {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.stat-icon-split {
+  font-size: 16px;
+}
+
+.stat-divider-split {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.question-tabs-split {
+  display: flex;
+  padding: 0 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-button-split {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 15px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button-split:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tab-button-split.active {
+  color: white;
+  border-bottom-color: #667eea;
+}
+
+.question-content-split {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.question-content-split::-webkit-scrollbar {
+  width: 8px;
+}
+
+.question-content-split::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.question-content-split::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 4px;
+}
+
+.content-section-split {
+  color: white;
+}
+
+.section-title-split {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.section-title-split:first-child {
+  margin-top: 0;
+}
+
+.question-description-split {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.topics-container-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.topic-tag-split {
+  background: rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #667eea;
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.example-box-split {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.example-box-split h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.code-block-split {
+  background: rgba(0, 0, 0, 0.3);
+  color: #00f2fe;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  overflow-x: auto;
+}
+
+/* ==================== IDE PANEL (RIGHT) ==================== */
+.ide-panel-split {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  overflow: hidden;
+}
+
+.ide-toolbar-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left-split {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbar-right-split {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-selector-split,
+.theme-selector-split {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.language-selector-split option,
+.theme-selector-split option {
+  background: #2d2d2d;
+}
+
+
+/* Gemini Buttons Styles */
+.gemini-button-split {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 8px;
+}
+
+.gemini-button-split:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7C3AED, #6D28D9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.gemini-button-split:disabled {
+  background: #4B5563;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Existing styles remain the same */
+.practice-solve-container {
+  display: flex;
+  height: 100vh;
+  background: #0f0f23;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ... rest of your existing CSS ... */
+
+.font-slider-split {
+  width: 80px;
+  cursor: pointer;
+}
+
+.run-button-split {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #43e97b, #38d167);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+}
+
+.practice-solve-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.practice-solve-container * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.run-button-split:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
+}
+
+.run-button-split:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.run-button-split.running {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.run-icon-split {
+  font-size: 14px;
+}
+
+.spinner-split {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.submit-button-split {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button-split:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.editor-section-split {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.output-section-split {
+  height: 200px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.output-header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.output-title-split {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.output-icon-split {
+  font-size: 16px;
+}
+
+.execution-time-split {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.output-content-split {
+  flex: 1;
+  overflow: auto;
+  padding: 15px 20px;
+}
+
+.output-content-split::-webkit-scrollbar {
+  width: 6px;
+}
+
+.output-content-split::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.output-content-split::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 3px;
+}
+
+.output-loading-split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+}
+
+.loading-spinner-split {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(102, 126, 234, 0.3);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.output-loading-split p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.output-placeholder-split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.placeholder-icon-split {
+  font-size: 40px;
+  opacity: 0.5;
+}
+
+.output-placeholder-split p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.output-text-split {
+  color: #d4d4d4;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+
+
+
+.permission-alert {
+  background-color: #ffdddd;
+  border: 1px solid #ff5c5c;
+  color: #a10000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+
+
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+  .practice-solve-container {
+    flex-direction: column;
+  }
+
+  .question-panel-split,
+  .ide-panel-split {
+    flex: none;
+    height: 50vh;
+  }
+
+  .question-title-split {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    margin: 15px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .question-header-split {
+    padding: 0 20px 15px;
+  }
+
+  .header-top-split {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .question-content-split {
+    padding: 20px;
+  }
+
+  .ide-toolbar-split {
+    padding: 10px 15px;
+  }
+
+  .output-section-split {
+    height: 150px;
+    min-height: 150px;
+  }
+
+
+
+}
+
+.fullscreen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.fullscreen-button {
+  background: #0A84FF;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(10, 132, 255, 0.4);
+  transition: all 0.25s ease;
+}
+
+.fullscreen-button:hover {
+  background: #0066CC;
+  box-shadow: 0px 4px 20px rgba(0, 102, 204, 0.5);
+  transform: translateY(-2px);
+}
+
+.fullscreen-button:active {
+  transform: scale(0.97);
+}
