@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/Python CSS/Basics.css";
+import "/src/python_css/Basics.css";
 
 const topics = [
   {
@@ -1264,9 +1264,9 @@ print(result)  # Output: 15
 
 
   {
-  id: "lambda-functions",
-  title: "Lambda Functions",
-  content: `
+    id: "lambda-functions",
+    title: "Lambda Functions",
+    content: `
 ### What are Lambda Functions?
 Lambda functions are **small, anonymous functions**.  
 They are used for quick tasks without writing a full function using def.
@@ -1305,12 +1305,12 @@ print(square(5))  # Output: 25
 - They make your code **clean and concise** for quick tasks.
 
 `
-},
+  },
 
   {
-  id: "modules",
-  title: "Modules",
-  content: `
+    id: "modules",
+    title: "Modules",
+    content: `
 ### What are Modules?
 Modules are **Python files** that contain **functions, variables, or classes**.  
 They help you **organize code** and **reuse it in multiple programs**.
@@ -1345,13 +1345,13 @@ print(sqrt(16))  # Output: 4.0
 - You can create your **own modules** by saving Python code in a .py file.  
 
 Next, we can move on to the **Math Module** for Python.`
-},
+  },
 
 
   {
-  id: "math-module",
-  title: "Math Module",
-  content: `
+    id: "math-module",
+    title: "Math Module",
+    content: `
 ### What is the Math Module?
 The **math module** is a built-in Python module that provides **mathematical functions**.  
 You can use it to perform calculations quickly without writing complex code.
@@ -1386,13 +1386,13 @@ print(math.pi)          # 3.141592653589793 → value of pi
 - Great for **school math problems, engineering calculations, and scientific tasks**.
 
 Next, we can move on to the **Random Module** in Python.`
-},
+  },
 
 
   {
-  id: "random-module",
-  title: "Random Module",
-  content: `
+    id: "random-module",
+    title: "Random Module",
+    content: `
 ### What is the Random Module?
 The **random module** is a built-in Python module that helps generate **random numbers or choices**.  
 It is very useful in **games, simulations, and experiments**.
@@ -1430,13 +1430,13 @@ print(random.choice([1, 2, 3]))
 - Can also be used in **simulations** and testing code with random inputs.
 
 Next, we can move on to **File Handling** in Python.`
-},
+  },
 
 
   {
-  id: "file-handling",
-  title: "File Handling",
-  content: `
+    id: "file-handling",
+    title: "File Handling",
+    content: `
 ### What is File Handling?
 Python can **read from and write to files** on your computer.  
 This is useful for saving data or reading information from files.
@@ -1483,13 +1483,13 @@ with open("file.txt", "r") as f:
 - Use appropriate **modes** depending on your task.  
 
 Next, we can move on to **Exception Handling** in Python.`
-},
+  },
 
 
   {
-  id: "exception-handling",
-  title: "Exception Handling",
-  content: `
+    id: "exception-handling",
+    title: "Exception Handling",
+    content: `
 ### What is Exception Handling?
 Exceptions are **errors that happen while a program is running**.  
 Python stops the program if an error occurs unless we handle it.
@@ -1528,12 +1528,12 @@ finally:
 - Prevents your program from **crashing unexpectedly**.  
 - You can have multiple except blocks for different error types.  
 `
-},
+  },
 
   {
-  id: "json-python",
-  title: "JSON in Python",
-  content: `
+    id: "json-python",
+    title: "JSON in Python",
+    content: `
 ### What is JSON?
 JSON (JavaScript Object Notation) is a **format to store and exchange data**.  
 Python can **read and write JSON** using the built-in **json module**.
@@ -1568,7 +1568,7 @@ print(json_string)                      # Output: '{"name": "Amit", "age": 12}'
 - Very useful for **web APIs, data storage, and exchanging information**  
 
 Next, we can move on to **Python Comments**.`
-},
+  },
 
   {
     id: "comments",
@@ -1587,9 +1587,9 @@ Multi-line:
 Comments do not affect code execution.`
   },
   {
-  id: "indentation",
-  title: "Python Indentation",
-  content: `
+    id: "indentation",
+    title: "Python Indentation",
+    content: `
 ### What is Indentation?
 Python uses **spaces or tabs** to define **blocks of code**.  
 Indentation is **very important** because it tells Python which statements belong together.
@@ -1618,12 +1618,12 @@ print("Yes")  # ❌ SyntaxError: expected an indented block
 - **Do not mix tabs and spaces**  
 - Always keep indentation **consistent** to avoid errors
 `
-},
+  },
 
- {
-  id: "type-checking",
-  title: "Type Checking",
-  content: `
+  {
+    id: "type-checking",
+    title: "Type Checking",
+    content: `
 ### What is Type Checking?
 In Python, every value has a **data type**.  
 You can check the type of a variable using the **type()** function.
@@ -1646,11 +1646,11 @@ print(type(name))  # <class 'str'>
 - Helpful to **debug errors** and ensure your program behaves correctly  
 - Works for all Python data types like int, float, str, bool, list, tuple, dict, etc.
 `
-},
+  },
   {
-  id: "keywords",
-  title: "Python Keywords",
-  content: `
+    id: "keywords",
+    title: "Python Keywords",
+    content: `
 ### What are Keywords?
 Keywords are **special reserved words** in Python that **have a predefined meaning**.  
 You **cannot use keywords as variable names**.
@@ -1670,12 +1670,12 @@ import, from, as, def, return, lambda, True, False, None
 - Avoid using them for **variable names** to prevent errors  
 - Use **help("keywords")** in Python to see a full list of keywords
 `
-},
+  },
 
   {
-  id: "constants",
-  title: "Python Constants",
-  content: `
+    id: "constants",
+    title: "Python Constants",
+    content: `
 ### What are Constants?
 Constants are **values that do not change** throughout the program.  
 
@@ -1697,11 +1697,11 @@ MAX_SCORE = 100
 - Avoid changing the value of a constant after defining it  
 - Helps make your code **readable** and **maintainable**
 `
-},
+  },
   {
-  id: "best-practices",
-  title: "Python Best Practices",
-  content: `
+    id: "best-practices",
+    title: "Python Best Practices",
+    content: `
 ### Python Best Practices
 Following good practices helps you **write clean, readable, and maintainable code**.
 
@@ -1730,7 +1730,7 @@ Following good practices helps you **write clean, readable, and maintainable cod
 7. **Use virtual environments for projects**  
    Keeps project dependencies **isolated** and organized.
 `
-}
+  }
 ];
 
 function basics() {

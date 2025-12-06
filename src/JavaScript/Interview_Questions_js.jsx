@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/JavaScript CSS/interview_questions_js.css";
+import "/src/javascript_css/interview_questions_js.css";
 import { Link } from "react-router-dom";
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/src/Java CSS/Practice_java.css";
+import "/src/java_css/Practice_java.css";
 import { Link } from "react-router-dom";
 
 

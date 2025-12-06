@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CodeIDE from "/src/pages/CodeIDE"; 
-import "/src/Python CSS/PracticeIDE.css";
+import CodeIDE from "/src/pages/CodeIDE";
+import "/src/python_css/PracticeIDE.css";
 
 function PracticeIDE() {
   const { id } = useParams();
@@ -17,7 +17,7 @@ function PracticeIDE() {
   }, [id]);
 
   const handleRunCode = async (userCode) => {
-    const output = await CodeIDE(userCode); 
+    const output = await CodeIDE(userCode);
     setUserOutput(output);
 
     if (output.trim() === question.expectedOutput.trim()) {

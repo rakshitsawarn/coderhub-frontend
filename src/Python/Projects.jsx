@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/Python CSS/Projects.css";
+import "/src/python_css/Projects.css";
 import { Link } from "react-router-dom";
 
 
@@ -409,7 +409,7 @@ function Projects() {
         </div>
         <div className="profile-status"></div>
       </Link>
-      
+
       {/* Animated Background */}
       <div className="background-grid"></div>
       <div className="gradient-orb orb-1"></div>

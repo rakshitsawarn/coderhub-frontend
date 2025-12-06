@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/src/Python CSS/Practice.css";
+import "/src/python_css/Practice.css";
 import { Link } from "react-router-dom";
 
 
