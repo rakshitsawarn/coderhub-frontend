@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-<<<<<<< HEAD
 import "src/css_files/profile.css";
-=======
-import "../CSS files/profile.css";
->>>>>>> 701456ae67b727e9c335bb4fa8b2559a1173beac
 
 function Profile() {
   const navigate = useNavigate();
