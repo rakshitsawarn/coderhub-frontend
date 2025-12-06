@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/CSS files/home.css";
+import "/src/css_files/home.css";
 import { Link } from "react-router-dom";
 import { Code2, BookOpen, TrendingUp, Users, Award, Zap, ArrowRight, Sparkles, Star, AwardIcon } from "lucide-react";
 

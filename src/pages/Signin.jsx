@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/CSS files/signup.css";
+import "/src/css_files/signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -108,9 +108,8 @@ function Login() {
               onChange={handleChange}
               onFocus={() => setFocusedField("email")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "email" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "email" ? "focused" : ""
+                }`}
               required
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$"
               title="Enter a valid email like example@gmail.com"
@@ -127,9 +126,8 @@ function Login() {
               onChange={handleChange}
               onFocus={() => setFocusedField("password")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "password" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "password" ? "focused" : ""
+                }`}
               required
             />
           </div>

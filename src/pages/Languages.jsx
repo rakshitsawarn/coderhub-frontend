@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/CSS files/Languages.css";
+import "/src/css_files/Languages.css";
 import { Link } from "react-router-dom";
 import { Search, X, Code2, Sparkles, TrendingUp, Zap } from "lucide-react";
 
@@ -61,7 +61,7 @@ function Languages() {
       "Java": "/languages/java",
       "JavaScript": "/languages/javascript",
       "Python": "/languages/python",
-      
+
     };
     return routes[name] || "#";
   };

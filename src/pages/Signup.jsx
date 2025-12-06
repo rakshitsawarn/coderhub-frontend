@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/CSS files/signup.css";
+import "/src/css_files/signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -62,7 +62,7 @@ function Signup() {
       console.error("❌ Signup error:", error);
       alert(
         error.response?.data?.message ||
-          "Server error. Please try again later."
+        "Server error. Please try again later."
       );
     } finally {
       setIsSubmitting(false);
@@ -117,9 +117,8 @@ function Signup() {
               onChange={handleChange}
               onFocus={() => setFocusedField("full_name")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "full_name" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "full_name" ? "focused" : ""
+                }`}
               required
             />
           </div>
@@ -135,9 +134,8 @@ function Signup() {
               onChange={handleChange}
               onFocus={() => setFocusedField("role_description")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "role_description" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "role_description" ? "focused" : ""
+                }`}
               required
             />
           </div>
@@ -153,9 +151,8 @@ function Signup() {
               onChange={handleChange}
               onFocus={() => setFocusedField("email")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "email" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "email" ? "focused" : ""
+                }`}
               required
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$"
               title="Enter a valid email like example@gmail.com"
@@ -173,9 +170,8 @@ function Signup() {
               onChange={handleChange}
               onFocus={() => setFocusedField("phone")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "phone" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "phone" ? "focused" : ""
+                }`}
               required
               pattern="^((\+91)?[\s-]?)?[6-9]\d{9}$"
               title="Enter a valid Indian phone number"
@@ -193,9 +189,8 @@ function Signup() {
               onChange={handleChange}
               onFocus={() => setFocusedField("password")}
               onBlur={() => setFocusedField("")}
-              className={`form-input ${
-                focusedField === "password" ? "focused" : ""
-              }`}
+              className={`form-input ${focusedField === "password" ? "focused" : ""
+                }`}
               required
               minLength="6"
               title="Password must be at least 6 characters long"

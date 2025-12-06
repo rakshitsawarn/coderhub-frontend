@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/CSS files/Python.css";
+import "/src/css_files/Python.css";
 import { useNavigate, Link } from "react-router-dom";
 
 function Python() {
@@ -71,7 +71,7 @@ function Python() {
       color: "#43e97b",
       topics: ["Quiz Game", "Web Scrapper", "AI Chatbot"],
     },
-   
+
     {
       title: "Learning Roadmap",
       description: "Follow a structured guide to master Python",

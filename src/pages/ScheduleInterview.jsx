@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Calendar, Clock, Video, Star, Sparkles, Crown, Zap, MessageCircle, CheckCircle, Award, TrendingUp, Users } from "lucide-react";
-import "/src/CSS files/schedule_interview.css";
+import "/src/css_files/schedule_interview.css";
 
 const ScheduleInterview = () => {
     const [selectedInterviewer, setSelectedInterviewer] = useState(null);

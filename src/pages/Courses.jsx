@@ -1,5 +1,5 @@
 import React from "react";
-import "/src/CSS files/Courses.css";
+import "/src/css_files/Courses.css";
 import { Link } from "react-router-dom";
 
 import { Lock, Sparkles, Crown, Star, Zap } from "lucide-react";

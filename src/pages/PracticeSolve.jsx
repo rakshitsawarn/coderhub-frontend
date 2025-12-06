@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Editor from "@monaco-editor/react";
-import "/src/CSS files/PracticeSolve.css";
+import "/src/css_files/PracticeSolve.css";
 
 const languageMap = {
   C: 50,
