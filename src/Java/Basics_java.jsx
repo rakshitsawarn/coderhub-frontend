@@ -4,96 +4,104 @@ import "/src/python_css/Basics.css";
 const topics = [
   {
     id: "intro",
-    title: "Introduction to Python",
+    title: "Introduction to Java",
     sections: [
       {
         type: "text",
-        content: "Python is a high-level, interpreted, general-purpose programming language. It is known for its simple syntax, which makes it very easy to learn and read."
+        content:
+          "Java is a high-level, object-oriented programming language used to build applications for computers, mobile phones (Android), and large-scale enterprise systems. Java is popular because it is simple, secure, and portable."
       },
       {
         type: "heading",
-        content: "Why Python is Popular?"
+        content: "Why Java is Popular?"
       },
       {
         type: "list",
         items: [
-          "Easy to learn and read - Python's syntax is similar to English",
-          "Free and open-source - Download and use for free",
-          "Cross-platform - Works on Windows, Mac, and Linux",
-          "Large community - Millions of Python users worldwide",
-          "Versatile - Web dev, game dev, data science, ML, automation",
-          "Powerful libraries - NumPy, Pandas, Matplotlib, TensorFlow"
+          "Simple syntax – beginner-friendly and easy to read",
+          "Platform independent – write once, run anywhere (WORA)",
+          "Highly secure – used in banking and enterprise apps",
+          "Large community – millions of developers",
+          "Used everywhere – web apps, mobile apps, enterprise systems",
+          "Rich libraries – prebuilt tools that simplify coding"
         ]
       },
       {
         type: "heading",
-        content: "Who Uses Python?"
+        content: "Who Uses Java?"
       },
       {
         type: "list",
         items: [
-          "Google - Search engines and AI projects",
-          "Netflix - Content recommendation systems",
-          "Instagram - Backend development",
-          "NASA - Scientific programming",
-          "Spotify - Data analysis and recommendations"
+          "Google – Android apps",
+          "Amazon – backend systems",
+          "Netflix – large-scale distributed systems",
+          "Uber – server-side applications",
+          "Spotify – scalable backend services"
         ]
       }
     ]
   },
+
   {
     id: "syntax",
-    title: "Python Syntax",
+    title: "Java Syntax",
     sections: [
       {
         type: "text",
-        content: "Python syntax is simple and easy to read. Here's what you need to know:"
+        content:
+          "Java syntax is structured and resembles English-like instructions. Every Java program must have a class and a main method to run."
       },
       {
         type: "heading",
-        content: "Python Statements"
+        content: "Basic Java Program"
       },
       {
         type: "code",
-        content: `x = 5\ny = 10\nprint(x + y)  # Output: 15`
-      },
-      {
-        type: "heading",
-        content: "Indentation"
+        content:
+          `class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Java!");
+    }
+}`
       },
       {
         type: "text",
-        content: "Python uses indentation (spaces) to define blocks of code:"
+        content: "Explanation for absolute beginners:"
       },
       {
-        type: "code",
-        content: `if x > 0:\n    print("Positive")\nelse:\n    print("Non-positive")`
-      },
-      {
-        type: "heading",
-        content: "Comments"
-      },
-      {
-        type: "code",
-        content: `# Single-line comment\n\n"""\nMulti-line\ncomment\n"""`
+        type: "list",
+        items: [
+          "`class Main` — Every Java program starts with a class.",
+          "`main()` — This is the entry point; the program runs from here.",
+          "`System.out.println()` — Prints text on the screen."
+        ]
       },
       {
         type: "heading",
-        content: "First Python Program"
+        content: "Comments in Java"
       },
       {
         type: "code",
-        content: `print("Hello, Python!")`
+        content:
+          `// Single-line comment
+
+/*
+ Multi-line
+ comment
+*/`
       }
     ]
   },
+
   {
     id: "variables",
     title: "Variables",
     sections: [
       {
         type: "text",
-        content: "Variables are containers that store data in a program."
+        content:
+          "Variables store data in Java. Think of a variable as a small box where you put some value."
       },
       {
         type: "heading",
@@ -101,7 +109,10 @@ const topics = [
       },
       {
         type: "code",
-        content: `name = "Amit"    # String\nage = 10         # Integer\npi = 3.14        # Float`
+        content:
+          `String name = "Amit";  
+int age = 10;          
+double pi = 3.14;     `
       },
       {
         type: "heading",
@@ -113,80 +124,91 @@ const topics = [
           "Cannot start with a number",
           "Case-sensitive (Name ≠ name)",
           "Use meaningful names",
-          "Use letters, numbers, and underscores only"
+          "Use only letters, numbers, and underscores"
         ]
       },
       {
         type: "code",
-        content: `# Wrong\n1name = "Amit"\n\n# Correct\nname1 = "Amit"\nstudent_name = "Amit"`
+        content:
+          `// Wrong
+1name = "Amit";
+
+// Correct
+name1 = "Amit";
+student_name = "Amit";`
       }
     ]
   },
+
   {
     id: "data-types",
     title: "Data Types",
     sections: [
       {
         type: "text",
-        content: "A data type tells Python what kind of data is stored in a variable."
+        content:
+          "Data types tell Java what type of data a variable will store. Java is a strongly typed language, so the type must be declared."
       },
       {
         type: "heading",
         content: "Common Data Types"
       },
+
       {
         type: "datatype",
         name: "Integer (int)",
-        desc: "Whole numbers",
-        code: `x = 10\ny = -5`
+        desc: "Whole numbers without decimals",
+        code:
+          `int x = 10;
+int y = -5;`
       },
+
       {
         type: "datatype",
-        name: "Float (float)",
+        name: "Double (double)",
         desc: "Decimal numbers",
-        code: `pi = 3.14\ntemp = -2.5`
+        code:
+          `double pi = 3.14;
+double temp = -2.5;`
       },
+
       {
         type: "datatype",
-        name: "String (str)",
-        desc: "Text in quotes",
-        code: `name = "Amit"\ngreeting = 'Hello'`
+        name: "String",
+        desc: "Text inside double quotes",
+        code:
+          `String name = "Amit";
+String greet = "Hello";`
       },
+
       {
         type: "datatype",
-        name: "Boolean (bool)",
-        desc: "True or False",
-        code: `is_raining = True\nis_sunny = False`
+        name: "Boolean (boolean)",
+        desc: "true or false values",
+        code:
+          `boolean isRaining = true;
+boolean isSunny = false;`
       },
-      {
-        type: "datatype",
-        name: "List (list)",
-        desc: "Ordered collection",
-        code: `fruits = ["apple", "banana"]\nnumbers = [1, 2, 3]`
-      },
-      {
-        type: "datatype",
-        name: "Dictionary (dict)",
-        desc: "Key-value pairs",
-        code: `student = {\n  "name": "Amit",\n  "age": 12\n}`
-      },
+
       {
         type: "heading",
-        content: "Check Data Type"
+        content: "Check Data Type (Concept)"
       },
       {
-        type: "code",
-        content: `x = 10\nprint(type(x))  # <class 'int'>`
+        type: "text",
+        content:
+          "Java is statically typed — type checking happens during compilation, so Java does not use a runtime type-check function like Python’s `type()`."
       }
     ]
   },
+
   {
     id: "operators",
     title: "Operators",
     sections: [
       {
         type: "text",
-        content: "Operators perform operations on values and variables."
+        content: "Operators perform actions on variables and values."
       },
       {
         type: "heading",
@@ -194,7 +216,12 @@ const topics = [
       },
       {
         type: "code",
-        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulo\n**  # Exponent\n//  # Floor division`
+        content:
+          `+   // Addition
+-   // Subtraction
+*   // Multiplication
+/   // Division
+%   // Modulo (remainder)`
       },
       {
         type: "heading",
@@ -202,7 +229,13 @@ const topics = [
       },
       {
         type: "code",
-        content: `==  # Equal to\n!=  # Not equal\n>   # Greater than\n<   # Less than\n>=  # Greater or equal\n<=  # Less or equal`
+        content:
+          `==  // Equal to
+!=  // Not equal
+>   // Greater than
+<   // Less than
+>=  // Greater or equal
+<=  // Less or equal`
       },
       {
         type: "heading",
@@ -210,29 +243,46 @@ const topics = [
       },
       {
         type: "code",
-        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a ** 2)  # 100\nprint(a > b)   # True`
+        content:
+          `int a = 10;
+int b = 5;
+
+System.out.println(a + b);   // 15
+System.out.println(a * 2);   // 20
+System.out.println(a > b);   // true`
       }
     ]
   },
+
   {
     id: "strings",
     title: "Strings",
     sections: [
       {
         type: "text",
-        content: "Strings are text enclosed in quotes."
+        content: "Strings store text values such as names, messages, etc."
       },
       {
         type: "code",
-        content: `name = "Python"\ngreeting = 'Hello'`
+        content:
+          `String name = "Java";
+String greeting = "Hello";`
       },
       {
         type: "heading",
         content: "String Indexing"
       },
       {
+        type: "text",
+        content:
+          "Java strings work like arrays of characters; indexing starts from 0."
+      },
+      {
         type: "code",
-        content: `text = "Hello"\nprint(text[0])   # H\nprint(text[-1])  # o`
+        content:
+          `String text = "Hello";
+System.out.println(text.charAt(0));  // H
+System.out.println(text.charAt(4));  // o`
       },
       {
         type: "heading",
@@ -240,51 +290,69 @@ const topics = [
       },
       {
         type: "code",
-        content: `# Concatenation\nnew_text = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
+        content:
+          `// Concatenation
+String newText = "Hello" + " World";
+
+// Repetition (Java does not support * repetition like Python)
+// But we can manually repeat using a loop`
       }
     ]
   },
+
   {
     id: "string-methods",
     title: "String Methods",
     sections: [
       {
         type: "text",
-        content: "String methods help you work with text easily."
+        content: "Java provides many built-in methods to work with strings."
       },
       {
         type: "method",
-        name: "upper() & lower()",
-        code: `text = "Hello"\nprint(text.upper())  # HELLO\nprint(text.lower())  # hello`
+        name: "toUpperCase() & toLowerCase()",
+        code:
+          `String text = "Hello";
+System.out.println(text.toUpperCase()); // HELLO
+System.out.println(text.toLowerCase()); // hello`
       },
       {
         type: "method",
-        name: "strip()",
-        code: `text = "  Python  "\nprint(text.strip())  # Python`
+        name: "trim()",
+        code:
+          `String text = "  Java  ";
+System.out.println(text.trim()); // Java`
       },
       {
         type: "method",
         name: "replace()",
-        code: `text = "Hello"\nprint(text.replace("H", "Y"))  # Yello`
+        code:
+          `String text = "Hello";
+System.out.println(text.replace("H", "Y")); // Yello`
       },
       {
         type: "method",
         name: "split()",
-        code: `text = "Hello World"\nprint(text.split())  # ['Hello', 'World']`
+        code:
+          `String text = "Hello World";
+String[] arr = text.split(" ");`
       }
     ]
   },
+
   {
-    id: "lists",
-    title: "Lists",
+    id: "arrays",
+    title: "Arrays",
     sections: [
       {
         type: "text",
-        content: "Lists store multiple values in a single variable."
+        content: "Arrays store multiple values of the same type in one variable."
       },
       {
         type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]\nmixed = [1, "apple", 3.5, True]`
+        content:
+          `int[] numbers = {1, 2, 3};
+String[] fruits = {"apple", "mango", "banana"};`
       },
       {
         type: "heading",
@@ -292,85 +360,42 @@ const topics = [
       },
       {
         type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nprint(fruits[0])   # apple\nprint(fruits[-1])  # banana`
+        content:
+          `System.out.println(fruits[0]);   // apple
+System.out.println(fruits[2]);   // banana`
       },
       {
         type: "heading",
-        content: "Modifying Lists"
+        content: "Modifying Arrays"
       },
       {
         type: "code",
-        content: `fruits[1] = "orange"      # Change\nfruits.append("grapes")   # Add\nfruits.remove("apple")    # Remove`
+        content:
+          `fruits[1] = "orange";`
       }
     ]
   },
-  {
-    id: "list-methods",
-    title: "List Methods",
-    sections: [
-      {
-        type: "method",
-        name: "append()",
-        code: `fruits = ["apple"]\nfruits.append("banana")\nprint(fruits)  # ['apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "insert()",
-        code: `fruits.insert(0, "mango")\nprint(fruits)  # ['mango', 'apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "sort()",
-        code: `nums = [3, 1, 2]\nnums.sort()\nprint(nums)  # [1, 2, 3]`
-      },
-      {
-        type: "method",
-        name: "reverse()",
-        code: `nums.reverse()\nprint(nums)  # [3, 2, 1]`
-      }
-    ]
-  },
-  {
-    id: "dictionaries",
-    title: "Dictionaries",
-    sections: [
-      {
-        type: "text",
-        content: "Dictionaries store data in key-value pairs."
-      },
-      {
-        type: "code",
-        content: `student = {\n  "name": "Amit",\n  "age": 12,\n  "class": 7\n}`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `print(student["name"])  # Amit\nprint(student["age"])   # 12`
-      },
-      {
-        type: "heading",
-        content: "Modifying Dictionary"
-      },
-      {
-        type: "code",
-        content: `student["age"] = 13        # Change\nstudent["grade"] = "A"     # Add\ndel student["class"]       # Remove`
-      }
-    ]
-  },
+
   {
     id: "conditions",
-    title: "Conditions (if/elif/else)",
+    title: "Conditions (if/else)",
     sections: [
       {
         type: "text",
-        content: "Conditions allow Python to make decisions."
+        content: "Conditions help Java make decisions based on true/false."
       },
       {
         type: "code",
-        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")\n\n# Output: Big`
+        content:
+          `int x = 10;
+
+if (x > 5) {
+    System.out.println("Big");
+} else if (x == 5) {
+    System.out.println("Equal");
+} else {
+    System.out.println("Small");
+}`
       },
       {
         type: "heading",
@@ -378,17 +403,21 @@ const topics = [
       },
       {
         type: "code",
-        content: `if x > 5 and x < 15:\n    print("x is between 5 and 15")`
+        content:
+          `if (x > 5 && x < 15) {
+    System.out.println("x is between 5 and 15");
+}`
       }
     ]
   },
+
   {
     id: "loops",
     title: "Loops (for/while)",
     sections: [
       {
         type: "text",
-        content: "Loops repeat actions multiple times."
+        content: "Loops repeat tasks multiple times."
       },
       {
         type: "heading",
@@ -396,7 +425,11 @@ const topics = [
       },
       {
         type: "code",
-        content: `for i in range(5):\n    print(i)\n\n# Output: 0, 1, 2, 3, 4`
+        content:
+          `for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+// Output: 0 1 2 3 4`
       },
       {
         type: "heading",
@@ -404,111 +437,64 @@ const topics = [
       },
       {
         type: "code",
-        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Output: 0, 1, 2, 3, 4`
+        content:
+          `int x = 0;
+while (x < 5) {
+    System.out.println(x);
+    x++;
+}
+// Output: 0 1 2 3 4`
       }
     ]
   },
+
   {
-    id: "functions",
-    title: "Functions",
+    id: "methods",
+    title: "Methods",
     sections: [
       {
         type: "text",
-        content: "Functions are reusable blocks of code."
+        content:
+          "Methods are reusable blocks of code that perform a specific task."
       },
       {
         type: "heading",
-        content: "Creating a Function"
+        content: "Creating a Method"
       },
       {
         type: "code",
-        content: `def greet(name):\n    print("Hello", name)`
+        content:
+          `static void greet(String name) {
+    System.out.println("Hello " + name);
+}`
       },
       {
         type: "heading",
-        content: "Using a Function"
+        content: "Using a Method"
       },
       {
         type: "code",
-        content: `greet("Amit")  # Output: Hello Amit`
+        content:
+          `greet("Amit");  // Output: Hello Amit`
       },
       {
         type: "heading",
-        content: "Functions with Return"
+        content: "Method with Return"
       },
       {
         type: "code",
-        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)  # 15`
-      }
-    ]
-  },
-  {
-    id: "modules",
-    title: "Modules",
-    sections: [
-      {
-        type: "text",
-        content: "Modules are Python files containing functions and variables."
-      },
-      {
-        type: "heading",
-        content: "Using Math Module"
-      },
-      {
-        type: "code",
-        content: `import math\n\nprint(math.sqrt(16))   # 4.0\nprint(math.ceil(4.2))  # 5\nprint(math.floor(4.8)) # 4\nprint(math.pi)         # 3.14159...`
-      },
-      {
-        type: "heading",
-        content: "Using Random Module"
-      },
-      {
-        type: "code",
-        content: `import random\n\nprint(random.randint(1, 10))  # Random number\nprint(random.choice([1,2,3])) # Random choice`
-      }
-    ]
-  },
-  {
-    id: "file-handling",
-    title: "File Handling",
-    sections: [
-      {
-        type: "text",
-        content: "Python can read and write files."
-      },
-      {
-        type: "heading",
-        content: "Reading a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "r") as f:\n    content = f.read()\n    print(content)`
-      },
-      {
-        type: "heading",
-        content: "Writing to a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "w") as f:\n    f.write("Hello World")`
-      }
-    ]
-  },
-  {
-    id: "exception-handling",
-    title: "Exception Handling",
-    sections: [
-      {
-        type: "text",
-        content: "Handle errors gracefully with try-except blocks."
-      },
-      {
-        type: "code",
-        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nfinally:\n    print("This always runs")`
+        content:
+          `static int add(int a, int b) {
+    return a + b;
+}
+
+int result = add(5, 10);
+System.out.println(result); // 15`
       }
     ]
   }
 ];
+
 
 function Basics() {
   const [activeTopic, setActiveTopic] = useState(topics[0].id);
@@ -575,7 +561,7 @@ function Basics() {
     <div className="python-container">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1 className="sidebar-title">Python Basics</h1>
+          <h1 className="sidebar-title">Basics Java</h1>
           <p className="sidebar-subtitle">Complete Learning Guide</p>
         </div>
 

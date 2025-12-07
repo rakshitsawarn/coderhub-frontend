@@ -2,513 +2,441 @@ import React, { useState } from "react";
 import "/src/python_css/Basics.css";
 
 const topics = [
+
+  /* -------------------------------------------------------------------------- */
+  /*                          1. OOP INTRODUCTION                               */
+  /* -------------------------------------------------------------------------- */
+
   {
-    id: "intro",
-    title: "Introduction to Python",
+    id: "oop-intro",
+    title: "Object-Oriented Programming (OOP)",
     sections: [
       {
         type: "text",
-        content: "Python is a high-level, interpreted, general-purpose programming language. It is known for its simple syntax, which makes it very easy to learn and read."
+        content:
+          "OOP (Object-Oriented Programming) is a method of structuring programs using objects. An object represents real-world things like a Car, Mobile, Student, etc. Each object has properties (data) and actions (methods). OOP makes Java easier to maintain, reuse, and scale."
       },
+
       {
         type: "heading",
-        content: "Why Python is Popular?"
+        content: "Why OOP Is Needed?"
       },
+
       {
         type: "list",
         items: [
-          "Easy to learn and read - Python's syntax is similar to English",
-          "Free and open-source - Download and use for free",
-          "Cross-platform - Works on Windows, Mac, and Linux",
-          "Large community - Millions of Python users worldwide",
-          "Versatile - Web dev, game dev, data science, ML, automation",
-          "Powerful libraries - NumPy, Pandas, Matplotlib, TensorFlow"
+          "OOP organizes code like real-life objects — It becomes easier to understand.",
+          "Code reusability — no need to rewrite logic again and again.",
+          "Security — sensitive data can be hidden inside classes.",
+          "Easy to maintain — changes in one place do not break the whole project.",
+          "Better for building large apps — used by companies around the world."
         ]
       },
+
       {
         type: "heading",
-        content: "Who Uses Python?"
+        content: "Real-Life Analogy"
       },
+
+      {
+        type: "text",
+        content:
+          "Think of a Car: It has properties (color, speed) and actions (start, stop). In the same way, Java classes have variables (properties) and methods (actions)."
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                         2. CLASSES AND OBJECTS                             */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "classes-objects",
+    title: "Classes & Objects",
+    sections: [
+      {
+        type: "text",
+        content:
+          "A Class is like a blueprint or template. An Object is created using the class — just like a house is built using a building plan. You can create multiple objects from one class."
+      },
+
+      {
+        type: "heading",
+        content: "Example with Simple Explanation"
+      },
+
+      {
+        type: "code",
+        content:
+          `// A class is a blueprint
+class Car {
+    String color;   // property
+    int speed;      // property
+
+    void drive() {  // method (action)
+        System.out.println("Car is driving...");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Creating an object
+        myCar.color = "Red";
+        myCar.speed = 120;
+
+        System.out.println(myCar.color); // Red
+        myCar.drive(); // Car is driving...
+    }
+}`
+      },
+
+      {
+        type: "text",
+        content:
+          "Here, Car is the class. myCar is the object (real-life copy). You can make many objects from the same class."
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                              3. CONSTRUCTORS                               */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "constructors",
+    title: "Constructors",
+    sections: [
+      {
+        type: "text",
+        content:
+          "A constructor is a special method that runs automatically when an object is created. It is used to assign initial values to variables. Constructor name must match the class name and it has no return type."
+      },
+
+      {
+        type: "heading",
+        content: "Types of Constructors"
+      },
+
       {
         type: "list",
         items: [
-          "Google - Search engines and AI projects",
-          "Netflix - Content recommendation systems",
-          "Instagram - Backend development",
-          "NASA - Scientific programming",
-          "Spotify - Data analysis and recommendations"
+          "Default Constructor — Java gives it automatically if you don't create one.",
+          "Parameterized Constructor — You can pass values while creating objects."
         ]
+      },
+
+      {
+        type: "heading",
+        content: "Example: Parameterized Constructor"
+      },
+
+      {
+        type: "code",
+        content:
+          `class Student {
+    String name;
+    int age;
+
+    Student(String n, int a) {  // Constructor
+        name = n;
+        age = a;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Amit", 15); // passing values
+        System.out.println(s1.name + " is " + s1.age + " years old.");
+    }
+}`
+      },
+
+      {
+        type: "text",
+        content:
+          "Constructor saves time because you don't have to set values manually for each object."
       }
     ]
   },
+
+  /* -------------------------------------------------------------------------- */
+  /*                               4. INHERITANCE                               */
+  /* -------------------------------------------------------------------------- */
+
   {
-    id: "syntax",
-    title: "Python Syntax",
+    id: "inheritance",
+    title: "Inheritance",
     sections: [
       {
         type: "text",
-        content: "Python syntax is simple and easy to read. Here's what you need to know:"
+        content:
+          "Inheritance allows one class (child) to reuse properties and methods of another class (parent). It helps avoid writing duplicate code."
       },
+
       {
         type: "heading",
-        content: "Python Statements"
+        content: "Simple Explanation"
       },
-      {
-        type: "code",
-        content: `x = 5\ny = 10\nprint(x + y)  # Output: 15`
-      },
-      {
-        type: "heading",
-        content: "Indentation"
-      },
+
       {
         type: "text",
-        content: "Python uses indentation (spaces) to define blocks of code:"
+        content:
+          "If Animal has a method eat(), Dog automatically gets it because Dog extends Animal."
       },
-      {
-        type: "code",
-        content: `if x > 0:\n    print("Positive")\nelse:\n    print("Non-positive")`
-      },
-      {
-        type: "heading",
-        content: "Comments"
-      },
-      {
-        type: "code",
-        content: `# Single-line comment\n\n"""\nMulti-line\ncomment\n"""`
-      },
-      {
-        type: "heading",
-        content: "First Python Program"
-      },
-      {
-        type: "code",
-        content: `print("Hello, Python!")`
-      }
-    ]
-  },
-  {
-    id: "variables",
-    title: "Variables",
-    sections: [
-      {
-        type: "text",
-        content: "Variables are containers that store data in a program."
-      },
+
       {
         type: "heading",
         content: "Example"
       },
+
       {
         type: "code",
-        content: `name = "Amit"    # String\nage = 10         # Integer\npi = 3.14        # Float`
+        content:
+          `class Animal {
+    void eat() {
+        System.out.println("Animal is eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking...");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();  // Inherited from Animal
+        d.bark(); // Dog's own method
+    }
+}`
       },
+
       {
         type: "heading",
-        content: "Naming Rules"
+        content: "Types of Inheritance in Java"
       },
+
       {
         type: "list",
         items: [
-          "Cannot start with a number",
-          "Case-sensitive (Name ≠ name)",
-          "Use meaningful names",
-          "Use letters, numbers, and underscores only"
+          "Single Inheritance — One parent, one child.",
+          "Multi-level Inheritance — Parent → Child → Grandchild.",
+          "Hierarchical Inheritance — One parent, many children."
         ]
       },
+
       {
-        type: "code",
-        content: `# Wrong\n1name = "Amit"\n\n# Correct\nname1 = "Amit"\nstudent_name = "Amit"`
+        type: "text",
+        content:
+          "Java does NOT support multiple inheritance using classes (because of ambiguity)."
       }
     ]
   },
+
+  /* -------------------------------------------------------------------------- */
+  /*                              5. POLYMORPHISM                               */
+  /* -------------------------------------------------------------------------- */
+
   {
-    id: "data-types",
-    title: "Data Types",
+    id: "polymorphism",
+    title: "Polymorphism",
     sections: [
       {
         type: "text",
-        content: "A data type tells Python what kind of data is stored in a variable."
+        content:
+          "Polymorphism means one thing having many forms. In Java, it means that the same method name can behave differently depending on where or how it is used."
       },
+
       {
         type: "heading",
-        content: "Common Data Types"
+        content: "Two Types of Polymorphism"
       },
+
       {
-        type: "datatype",
-        name: "Integer (int)",
-        desc: "Whole numbers",
-        code: `x = 10\ny = -5`
+        type: "list",
+        items: [
+          "Method Overloading — Same method name but different parameters.",
+          "Method Overriding — Child class changes method of parent class."
+        ]
       },
-      {
-        type: "datatype",
-        name: "Float (float)",
-        desc: "Decimal numbers",
-        code: `pi = 3.14\ntemp = -2.5`
-      },
-      {
-        type: "datatype",
-        name: "String (str)",
-        desc: "Text in quotes",
-        code: `name = "Amit"\ngreeting = 'Hello'`
-      },
-      {
-        type: "datatype",
-        name: "Boolean (bool)",
-        desc: "True or False",
-        code: `is_raining = True\nis_sunny = False`
-      },
-      {
-        type: "datatype",
-        name: "List (list)",
-        desc: "Ordered collection",
-        code: `fruits = ["apple", "banana"]\nnumbers = [1, 2, 3]`
-      },
-      {
-        type: "datatype",
-        name: "Dictionary (dict)",
-        desc: "Key-value pairs",
-        code: `student = {\n  "name": "Amit",\n  "age": 12\n}`
-      },
+
       {
         type: "heading",
-        content: "Check Data Type"
+        content: "1. Method Overloading (Compile-time Polymorphism)"
       },
+
       {
         type: "code",
-        content: `x = 10\nprint(type(x))  # <class 'int'>`
+        content:
+          `class MathOps {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}`
+      },
+
+      {
+        type: "text",
+        content:
+          "Here add() works differently depending on number of arguments."
+      },
+
+      {
+        type: "heading",
+        content: "2. Method Overriding (Runtime Polymorphism)"
+      },
+
+      {
+        type: "code",
+        content:
+          `class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}`
+      },
+
+      {
+        type: "text",
+        content:
+          "Here Dog changes behaviour of the sound() method of Animal."
       }
     ]
   },
+
+  /* -------------------------------------------------------------------------- */
+  /*                               6. ABSTRACTION                               */
+  /* -------------------------------------------------------------------------- */
+
   {
-    id: "operators",
-    title: "Operators",
+    id: "abstraction",
+    title: "Abstraction",
     sections: [
       {
         type: "text",
-        content: "Operators perform operations on values and variables."
+        content:
+          "Abstraction means hiding complex details and showing only what is necessary. For example, when using a phone, you only press buttons — you don't care about internal circuits."
       },
+
       {
         type: "heading",
-        content: "Arithmetic Operators"
+        content: "Two Ways Java Achieves Abstraction"
       },
+
       {
-        type: "code",
-        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulo\n**  # Exponent\n//  # Floor division`
+        type: "list",
+        items: [
+          "Abstract Classes",
+          "Interfaces"
+        ]
       },
+
       {
         type: "heading",
-        content: "Comparison Operators"
+        content: "1. Abstract Class Example"
       },
+
       {
         type: "code",
-        content: `==  # Equal to\n!=  # Not equal\n>   # Greater than\n<   # Less than\n>=  # Greater or equal\n<=  # Less or equal`
+        content:
+          `abstract class Animal {
+    abstract void sound(); // abstract method
+    void sleep() {         // normal method
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}`
       },
+
+      {
+        type: "heading",
+        content: "2. Interface Example"
+      },
+
+      {
+        type: "code",
+        content:
+          `interface Vehicle {
+    void start(); // abstract by default
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car starts");
+    }
+}`
+      },
+
+      {
+        type: "text",
+        content:
+          "Interfaces allow a class to achieve 'multiple behaviors'. A class can implement many interfaces."
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                            7. ENCAPSULATION                                */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "encapsulation",
+    title: "Encapsulation",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Encapsulation hides sensitive data from direct access. You keep variables private and use getters & setters to access them safely."
+      },
+
       {
         type: "heading",
         content: "Example"
       },
+
       {
         type: "code",
-        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a ** 2)  # 100\nprint(a > b)   # True`
-      }
-    ]
-  },
-  {
-    id: "strings",
-    title: "Strings",
-    sections: [
+        content:
+          `class BankAccount {
+    private int balance; // hidden
+
+    void deposit(int amount) {
+        balance += amount;
+    }
+
+    int getBalance() {
+        return balance;
+    }
+}`
+      },
+
       {
         type: "text",
-        content: "Strings are text enclosed in quotes."
-      },
-      {
-        type: "code",
-        content: `name = "Python"\ngreeting = 'Hello'`
-      },
-      {
-        type: "heading",
-        content: "String Indexing"
-      },
-      {
-        type: "code",
-        content: `text = "Hello"\nprint(text[0])   # H\nprint(text[-1])  # o`
-      },
-      {
-        type: "heading",
-        content: "String Operations"
-      },
-      {
-        type: "code",
-        content: `# Concatenation\nnew_text = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
-      }
-    ]
-  },
-  {
-    id: "string-methods",
-    title: "String Methods",
-    sections: [
-      {
-        type: "text",
-        content: "String methods help you work with text easily."
-      },
-      {
-        type: "method",
-        name: "upper() & lower()",
-        code: `text = "Hello"\nprint(text.upper())  # HELLO\nprint(text.lower())  # hello`
-      },
-      {
-        type: "method",
-        name: "strip()",
-        code: `text = "  Python  "\nprint(text.strip())  # Python`
-      },
-      {
-        type: "method",
-        name: "replace()",
-        code: `text = "Hello"\nprint(text.replace("H", "Y"))  # Yello`
-      },
-      {
-        type: "method",
-        name: "split()",
-        code: `text = "Hello World"\nprint(text.split())  # ['Hello', 'World']`
-      }
-    ]
-  },
-  {
-    id: "lists",
-    title: "Lists",
-    sections: [
-      {
-        type: "text",
-        content: "Lists store multiple values in a single variable."
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]\nmixed = [1, "apple", 3.5, True]`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nprint(fruits[0])   # apple\nprint(fruits[-1])  # banana`
-      },
-      {
-        type: "heading",
-        content: "Modifying Lists"
-      },
-      {
-        type: "code",
-        content: `fruits[1] = "orange"      # Change\nfruits.append("grapes")   # Add\nfruits.remove("apple")    # Remove`
-      }
-    ]
-  },
-  {
-    id: "list-methods",
-    title: "List Methods",
-    sections: [
-      {
-        type: "method",
-        name: "append()",
-        code: `fruits = ["apple"]\nfruits.append("banana")\nprint(fruits)  # ['apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "insert()",
-        code: `fruits.insert(0, "mango")\nprint(fruits)  # ['mango', 'apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "sort()",
-        code: `nums = [3, 1, 2]\nnums.sort()\nprint(nums)  # [1, 2, 3]`
-      },
-      {
-        type: "method",
-        name: "reverse()",
-        code: `nums.reverse()\nprint(nums)  # [3, 2, 1]`
-      }
-    ]
-  },
-  {
-    id: "dictionaries",
-    title: "Dictionaries",
-    sections: [
-      {
-        type: "text",
-        content: "Dictionaries store data in key-value pairs."
-      },
-      {
-        type: "code",
-        content: `student = {\n  "name": "Amit",\n  "age": 12,\n  "class": 7\n}`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `print(student["name"])  # Amit\nprint(student["age"])   # 12`
-      },
-      {
-        type: "heading",
-        content: "Modifying Dictionary"
-      },
-      {
-        type: "code",
-        content: `student["age"] = 13        # Change\nstudent["grade"] = "A"     # Add\ndel student["class"]       # Remove`
-      }
-    ]
-  },
-  {
-    id: "conditions",
-    title: "Conditions (if/elif/else)",
-    sections: [
-      {
-        type: "text",
-        content: "Conditions allow Python to make decisions."
-      },
-      {
-        type: "code",
-        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")\n\n# Output: Big`
-      },
-      {
-        type: "heading",
-        content: "Combining Conditions"
-      },
-      {
-        type: "code",
-        content: `if x > 5 and x < 15:\n    print("x is between 5 and 15")`
-      }
-    ]
-  },
-  {
-    id: "loops",
-    title: "Loops (for/while)",
-    sections: [
-      {
-        type: "text",
-        content: "Loops repeat actions multiple times."
-      },
-      {
-        type: "heading",
-        content: "For Loop"
-      },
-      {
-        type: "code",
-        content: `for i in range(5):\n    print(i)\n\n# Output: 0, 1, 2, 3, 4`
-      },
-      {
-        type: "heading",
-        content: "While Loop"
-      },
-      {
-        type: "code",
-        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Output: 0, 1, 2, 3, 4`
-      }
-    ]
-  },
-  {
-    id: "functions",
-    title: "Functions",
-    sections: [
-      {
-        type: "text",
-        content: "Functions are reusable blocks of code."
-      },
-      {
-        type: "heading",
-        content: "Creating a Function"
-      },
-      {
-        type: "code",
-        content: `def greet(name):\n    print("Hello", name)`
-      },
-      {
-        type: "heading",
-        content: "Using a Function"
-      },
-      {
-        type: "code",
-        content: `greet("Amit")  # Output: Hello Amit`
-      },
-      {
-        type: "heading",
-        content: "Functions with Return"
-      },
-      {
-        type: "code",
-        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)  # 15`
-      }
-    ]
-  },
-  {
-    id: "modules",
-    title: "Modules",
-    sections: [
-      {
-        type: "text",
-        content: "Modules are Python files containing functions and variables."
-      },
-      {
-        type: "heading",
-        content: "Using Math Module"
-      },
-      {
-        type: "code",
-        content: `import math\n\nprint(math.sqrt(16))   # 4.0\nprint(math.ceil(4.2))  # 5\nprint(math.floor(4.8)) # 4\nprint(math.pi)         # 3.14159...`
-      },
-      {
-        type: "heading",
-        content: "Using Random Module"
-      },
-      {
-        type: "code",
-        content: `import random\n\nprint(random.randint(1, 10))  # Random number\nprint(random.choice([1,2,3])) # Random choice`
-      }
-    ]
-  },
-  {
-    id: "file-handling",
-    title: "File Handling",
-    sections: [
-      {
-        type: "text",
-        content: "Python can read and write files."
-      },
-      {
-        type: "heading",
-        content: "Reading a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "r") as f:\n    content = f.read()\n    print(content)`
-      },
-      {
-        type: "heading",
-        content: "Writing to a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "w") as f:\n    f.write("Hello World")`
-      }
-    ]
-  },
-  {
-    id: "exception-handling",
-    title: "Exception Handling",
-    sections: [
-      {
-        type: "text",
-        content: "Handle errors gracefully with try-except blocks."
-      },
-      {
-        type: "code",
-        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nfinally:\n    print("This always runs")`
+        content:
+          "This makes data secure. No one can directly change the balance from outside."
       }
     ]
   }
+
 ];
+
 
 function IntermediateJava() {
   const [activeTopic, setActiveTopic] = useState(topics[0].id);
@@ -575,7 +503,7 @@ function IntermediateJava() {
     <div className="python-container">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1 className="sidebar-title">Python Basics</h1>
+          <h1 className="sidebar-title">Intermediate Java</h1>
           <p className="sidebar-subtitle">Complete Learning Guide</p>
         </div>
 

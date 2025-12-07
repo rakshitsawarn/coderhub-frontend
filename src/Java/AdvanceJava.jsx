@@ -2,513 +2,614 @@ import React, { useState } from "react";
 import "/src/python_css/Basics.css";
 
 const topics = [
+
+  /* -------------------------------------------------------------------------- */
+  /*                          1. EXCEPTION HANDLING                             */
+  /* -------------------------------------------------------------------------- */
+
   {
-    id: "intro",
-    title: "Introduction to Python",
+    id: "exceptions",
+    title: "Exception Handling",
     sections: [
       {
         type: "text",
-        content: "Python is a high-level, interpreted, general-purpose programming language. It is known for its simple syntax, which makes it very easy to learn and read."
+        content:
+          "Exceptions are errors that occur during program execution. If not handled, they stop the program. Java provides a structured way to handle these errors so programs run safely."
       },
+
       {
         type: "heading",
-        content: "Why Python is Popular?"
+        content: "Why Exceptions Occur?"
       },
+
       {
         type: "list",
         items: [
-          "Easy to learn and read - Python's syntax is similar to English",
-          "Free and open-source - Download and use for free",
-          "Cross-platform - Works on Windows, Mac, and Linux",
-          "Large community - Millions of Python users worldwide",
-          "Versatile - Web dev, game dev, data science, ML, automation",
-          "Powerful libraries - NumPy, Pandas, Matplotlib, TensorFlow"
+          "Dividing a number by zero",
+          "Accessing an invalid array index",
+          "Opening a file that does not exist",
+          "Incorrect input from user",
+          "Network failure or no internet"
         ]
       },
+
       {
         type: "heading",
-        content: "Who Uses Python?"
+        content: "Basic Exception Handling Syntax"
       },
-      {
-        type: "list",
-        items: [
-          "Google - Search engines and AI projects",
-          "Netflix - Content recommendation systems",
-          "Instagram - Backend development",
-          "NASA - Scientific programming",
-          "Spotify - Data analysis and recommendations"
-        ]
-      }
-    ]
-  },
-  {
-    id: "syntax",
-    title: "Python Syntax",
-    sections: [
-      {
-        type: "text",
-        content: "Python syntax is simple and easy to read. Here's what you need to know:"
-      },
-      {
-        type: "heading",
-        content: "Python Statements"
-      },
+
       {
         type: "code",
-        content: `x = 5\ny = 10\nprint(x + y)  # Output: 15`
+        content:
+          `try {
+    // code that might cause error
+} catch (Exception e) {
+    // handling the error
+} finally {
+    // runs always
+}`
       },
-      {
-        type: "heading",
-        content: "Indentation"
-      },
-      {
-        type: "text",
-        content: "Python uses indentation (spaces) to define blocks of code:"
-      },
-      {
-        type: "code",
-        content: `if x > 0:\n    print("Positive")\nelse:\n    print("Non-positive")`
-      },
-      {
-        type: "heading",
-        content: "Comments"
-      },
-      {
-        type: "code",
-        content: `# Single-line comment\n\n"""\nMulti-line\ncomment\n"""`
-      },
-      {
-        type: "heading",
-        content: "First Python Program"
-      },
-      {
-        type: "code",
-        content: `print("Hello, Python!")`
-      }
-    ]
-  },
-  {
-    id: "variables",
-    title: "Variables",
-    sections: [
-      {
-        type: "text",
-        content: "Variables are containers that store data in a program."
-      },
+
       {
         type: "heading",
         content: "Example"
       },
+
       {
         type: "code",
-        content: `name = "Amit"    # String\nage = 10         # Integer\npi = 3.14        # Float`
+        content:
+          `try {
+    int x = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+} finally {
+    System.out.println("This always runs");
+}`
       },
+
       {
         type: "heading",
-        content: "Naming Rules"
+        content: "Types of Exceptions"
       },
+
       {
         type: "list",
         items: [
-          "Cannot start with a number",
-          "Case-sensitive (Name ≠ name)",
-          "Use meaningful names",
-          "Use letters, numbers, and underscores only"
+          "Checked Exceptions – must be handled (FileNotFoundException)",
+          "Unchecked Exceptions – runtime errors (NullPointerException)",
+          "Errors – serious issues (OutOfMemoryError)"
         ]
-      },
-      {
-        type: "code",
-        content: `# Wrong\n1name = "Amit"\n\n# Correct\nname1 = "Amit"\nstudent_name = "Amit"`
       }
     ]
   },
-  {
-    id: "data-types",
-    title: "Data Types",
-    sections: [
-      {
-        type: "text",
-        content: "A data type tells Python what kind of data is stored in a variable."
-      },
-      {
-        type: "heading",
-        content: "Common Data Types"
-      },
-      {
-        type: "datatype",
-        name: "Integer (int)",
-        desc: "Whole numbers",
-        code: `x = 10\ny = -5`
-      },
-      {
-        type: "datatype",
-        name: "Float (float)",
-        desc: "Decimal numbers",
-        code: `pi = 3.14\ntemp = -2.5`
-      },
-      {
-        type: "datatype",
-        name: "String (str)",
-        desc: "Text in quotes",
-        code: `name = "Amit"\ngreeting = 'Hello'`
-      },
-      {
-        type: "datatype",
-        name: "Boolean (bool)",
-        desc: "True or False",
-        code: `is_raining = True\nis_sunny = False`
-      },
-      {
-        type: "datatype",
-        name: "List (list)",
-        desc: "Ordered collection",
-        code: `fruits = ["apple", "banana"]\nnumbers = [1, 2, 3]`
-      },
-      {
-        type: "datatype",
-        name: "Dictionary (dict)",
-        desc: "Key-value pairs",
-        code: `student = {\n  "name": "Amit",\n  "age": 12\n}`
-      },
-      {
-        type: "heading",
-        content: "Check Data Type"
-      },
-      {
-        type: "code",
-        content: `x = 10\nprint(type(x))  # <class 'int'>`
-      }
-    ]
-  },
-  {
-    id: "operators",
-    title: "Operators",
-    sections: [
-      {
-        type: "text",
-        content: "Operators perform operations on values and variables."
-      },
-      {
-        type: "heading",
-        content: "Arithmetic Operators"
-      },
-      {
-        type: "code",
-        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulo\n**  # Exponent\n//  # Floor division`
-      },
-      {
-        type: "heading",
-        content: "Comparison Operators"
-      },
-      {
-        type: "code",
-        content: `==  # Equal to\n!=  # Not equal\n>   # Greater than\n<   # Less than\n>=  # Greater or equal\n<=  # Less or equal`
-      },
-      {
-        type: "heading",
-        content: "Example"
-      },
-      {
-        type: "code",
-        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a ** 2)  # 100\nprint(a > b)   # True`
-      }
-    ]
-  },
-  {
-    id: "strings",
-    title: "Strings",
-    sections: [
-      {
-        type: "text",
-        content: "Strings are text enclosed in quotes."
-      },
-      {
-        type: "code",
-        content: `name = "Python"\ngreeting = 'Hello'`
-      },
-      {
-        type: "heading",
-        content: "String Indexing"
-      },
-      {
-        type: "code",
-        content: `text = "Hello"\nprint(text[0])   # H\nprint(text[-1])  # o`
-      },
-      {
-        type: "heading",
-        content: "String Operations"
-      },
-      {
-        type: "code",
-        content: `# Concatenation\nnew_text = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
-      }
-    ]
-  },
-  {
-    id: "string-methods",
-    title: "String Methods",
-    sections: [
-      {
-        type: "text",
-        content: "String methods help you work with text easily."
-      },
-      {
-        type: "method",
-        name: "upper() & lower()",
-        code: `text = "Hello"\nprint(text.upper())  # HELLO\nprint(text.lower())  # hello`
-      },
-      {
-        type: "method",
-        name: "strip()",
-        code: `text = "  Python  "\nprint(text.strip())  # Python`
-      },
-      {
-        type: "method",
-        name: "replace()",
-        code: `text = "Hello"\nprint(text.replace("H", "Y"))  # Yello`
-      },
-      {
-        type: "method",
-        name: "split()",
-        code: `text = "Hello World"\nprint(text.split())  # ['Hello', 'World']`
-      }
-    ]
-  },
-  {
-    id: "lists",
-    title: "Lists",
-    sections: [
-      {
-        type: "text",
-        content: "Lists store multiple values in a single variable."
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]\nmixed = [1, "apple", 3.5, True]`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nprint(fruits[0])   # apple\nprint(fruits[-1])  # banana`
-      },
-      {
-        type: "heading",
-        content: "Modifying Lists"
-      },
-      {
-        type: "code",
-        content: `fruits[1] = "orange"      # Change\nfruits.append("grapes")   # Add\nfruits.remove("apple")    # Remove`
-      }
-    ]
-  },
-  {
-    id: "list-methods",
-    title: "List Methods",
-    sections: [
-      {
-        type: "method",
-        name: "append()",
-        code: `fruits = ["apple"]\nfruits.append("banana")\nprint(fruits)  # ['apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "insert()",
-        code: `fruits.insert(0, "mango")\nprint(fruits)  # ['mango', 'apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "sort()",
-        code: `nums = [3, 1, 2]\nnums.sort()\nprint(nums)  # [1, 2, 3]`
-      },
-      {
-        type: "method",
-        name: "reverse()",
-        code: `nums.reverse()\nprint(nums)  # [3, 2, 1]`
-      }
-    ]
-  },
-  {
-    id: "dictionaries",
-    title: "Dictionaries",
-    sections: [
-      {
-        type: "text",
-        content: "Dictionaries store data in key-value pairs."
-      },
-      {
-        type: "code",
-        content: `student = {\n  "name": "Amit",\n  "age": 12,\n  "class": 7\n}`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `print(student["name"])  # Amit\nprint(student["age"])   # 12`
-      },
-      {
-        type: "heading",
-        content: "Modifying Dictionary"
-      },
-      {
-        type: "code",
-        content: `student["age"] = 13        # Change\nstudent["grade"] = "A"     # Add\ndel student["class"]       # Remove`
-      }
-    ]
-  },
-  {
-    id: "conditions",
-    title: "Conditions (if/elif/else)",
-    sections: [
-      {
-        type: "text",
-        content: "Conditions allow Python to make decisions."
-      },
-      {
-        type: "code",
-        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")\n\n# Output: Big`
-      },
-      {
-        type: "heading",
-        content: "Combining Conditions"
-      },
-      {
-        type: "code",
-        content: `if x > 5 and x < 15:\n    print("x is between 5 and 15")`
-      }
-    ]
-  },
-  {
-    id: "loops",
-    title: "Loops (for/while)",
-    sections: [
-      {
-        type: "text",
-        content: "Loops repeat actions multiple times."
-      },
-      {
-        type: "heading",
-        content: "For Loop"
-      },
-      {
-        type: "code",
-        content: `for i in range(5):\n    print(i)\n\n# Output: 0, 1, 2, 3, 4`
-      },
-      {
-        type: "heading",
-        content: "While Loop"
-      },
-      {
-        type: "code",
-        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Output: 0, 1, 2, 3, 4`
-      }
-    ]
-  },
-  {
-    id: "functions",
-    title: "Functions",
-    sections: [
-      {
-        type: "text",
-        content: "Functions are reusable blocks of code."
-      },
-      {
-        type: "heading",
-        content: "Creating a Function"
-      },
-      {
-        type: "code",
-        content: `def greet(name):\n    print("Hello", name)`
-      },
-      {
-        type: "heading",
-        content: "Using a Function"
-      },
-      {
-        type: "code",
-        content: `greet("Amit")  # Output: Hello Amit`
-      },
-      {
-        type: "heading",
-        content: "Functions with Return"
-      },
-      {
-        type: "code",
-        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)  # 15`
-      }
-    ]
-  },
-  {
-    id: "modules",
-    title: "Modules",
-    sections: [
-      {
-        type: "text",
-        content: "Modules are Python files containing functions and variables."
-      },
-      {
-        type: "heading",
-        content: "Using Math Module"
-      },
-      {
-        type: "code",
-        content: `import math\n\nprint(math.sqrt(16))   # 4.0\nprint(math.ceil(4.2))  # 5\nprint(math.floor(4.8)) # 4\nprint(math.pi)         # 3.14159...`
-      },
-      {
-        type: "heading",
-        content: "Using Random Module"
-      },
-      {
-        type: "code",
-        content: `import random\n\nprint(random.randint(1, 10))  # Random number\nprint(random.choice([1,2,3])) # Random choice`
-      }
-    ]
-  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                             2. FILE HANDLING                                */
+  /* -------------------------------------------------------------------------- */
+
   {
     id: "file-handling",
     title: "File Handling",
     sections: [
       {
         type: "text",
-        content: "Python can read and write files."
+        content:
+          "Java provides File, FileReader, FileWriter, BufferedReader, and PrintWriter classes to read and write files on the computer."
       },
-      {
-        type: "heading",
-        content: "Reading a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "r") as f:\n    content = f.read()\n    print(content)`
-      },
+
       {
         type: "heading",
         content: "Writing to a File"
       },
+
       {
         type: "code",
-        content: `with open("file.txt", "w") as f:\n    f.write("Hello World")`
+        content:
+          `import java.io.*;
+
+class Main {
+    public static void main(String[] args) throws Exception {
+        FileWriter fw = new FileWriter("data.txt");
+        fw.write("Hello Java File!");
+        fw.close();
+    }
+}`
+      },
+
+      {
+        type: "heading",
+        content: "Reading a File"
+      },
+
+      {
+        type: "code",
+        content:
+          `FileReader fr = new FileReader("data.txt");
+BufferedReader br = new BufferedReader(fr);
+
+String line;
+while ((line = br.readLine()) != null) {
+    System.out.println(line);
+}
+
+br.close();`
       }
     ]
   },
+
+  /* -------------------------------------------------------------------------- */
+  /*                        3. COLLECTIONS FRAMEWORK                             */
+  /* -------------------------------------------------------------------------- */
+
   {
-    id: "exception-handling",
-    title: "Exception Handling",
+    id: "collections",
+    title: "Collections Framework",
     sections: [
       {
         type: "text",
-        content: "Handle errors gracefully with try-except blocks."
+        content:
+          "Collections Framework provides ready-made data structures like List, Set, and Map to store and manipulate groups of objects efficiently."
       },
+
+      {
+        type: "heading",
+        content: "Why Collections?"
+      },
+
+      {
+        type: "list",
+        items: [
+          "Dynamic size (unlike arrays)",
+          "Built-in sorting and searching methods",
+          "Better memory management",
+          "Easy to iterate and modify"
+        ]
+      },
+
+      {
+        type: "heading",
+        content: "Important Interfaces"
+      },
+
+      {
+        type: "list",
+        items: [
+          "List – duplicates allowed, ordered",
+          "Set – no duplicates",
+          "Map – key-value pairs"
+        ]
+      },
+
+      {
+        type: "heading",
+        content: "ArrayList Example"
+      },
+
       {
         type: "code",
-        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nfinally:\n    print("This always runs")`
+        content:
+          `import java.util.*;
+
+ArrayList<String> list = new ArrayList<>();
+list.add("Apple");
+list.add("Mango");
+list.add("Banana");
+
+System.out.println(list.get(1)); // Mango`
+      },
+
+      {
+        type: "heading",
+        content: "HashMap Example"
+      },
+
+      {
+        type: "code",
+        content:
+          `HashMap<String, Integer> map = new HashMap<>();
+map.put("Amit", 90);
+map.put("Rahul", 85);
+
+System.out.println(map.get("Amit")); // 90`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 4. GENERICS                                 */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "generics",
+    title: "Generics",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Generics allow you to create classes, methods, and interfaces that work with any data type. This increases reusability and type safety."
+      },
+
+      {
+        type: "heading",
+        content: "Generic Class Example"
+      },
+
+      {
+        type: "code",
+        content:
+          `class Box<T> {
+    T value;
+
+    void set(T value) {
+        this.value = value;
+    }
+
+    T get() {
+        return value;
+    }
+}
+
+Box<String> b = new Box<>();
+b.set("Hello");
+System.out.println(b.get());`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                           5. MULTITHREADING                                 */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "multithreading",
+    title: "Multithreading",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Multithreading means running multiple tasks at the same time. Java has built-in support for multithreading, making it ideal for high-performance applications."
+      },
+
+      {
+        type: "heading",
+        content: "Why Threads?"
+      },
+
+      {
+        type: "list",
+        items: [
+          "Perform tasks simultaneously",
+          "Improve application performance",
+          "Used in games, servers, download managers"
+        ]
+      },
+
+      {
+        type: "heading",
+        content: "Creating a Thread (Method 1: Extending Thread)"
+      },
+
+      {
+        type: "code",
+        content:
+          `class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running...");
+    }
+}
+
+new MyThread().start();`
+      },
+
+      {
+        type: "heading",
+        content: "Creating a Thread (Method 2: Implementing Runnable)"
+      },
+
+      {
+        type: "code",
+        content:
+          `class Worker implements Runnable {
+    public void run() {
+        System.out.println("Task executed");
+    }
+}
+
+Thread t = new Thread(new Worker());
+t.start();`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                           6. SYNCHRONIZATION                                */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "synchronization",
+    title: "Synchronization",
+    sections: [
+      {
+        type: "text",
+        content:
+          "When two or more threads try to modify shared data, incorrect results may occur. Synchronization ensures only one thread accesses a resource at a time."
+      },
+
+      {
+        type: "heading",
+        content: "Example: Synchronized Method"
+      },
+
+      {
+        type: "code",
+        content:
+          `synchronized void deposit(int amount) {
+    balance += amount;
+}`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                               7. NETWORKING                                 */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "networking",
+    title: "Networking",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Java provides APIs to build network communication using TCP, UDP, and HTTP. The InetAddress, Socket, ServerSocket classes help create network programs."
+      },
+
+      {
+        type: "heading",
+        content: "Client-Server Example"
+      },
+
+      {
+        type: "code",
+        content:
+          `Socket s = new Socket("localhost", 8080);
+PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+out.println("Hello Server!");`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  8. JDBC                                    */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "jdbc",
+    title: "JDBC (Database Connectivity)",
+    sections: [
+      {
+        type: "text",
+        content:
+          "JDBC allows Java programs to connect and interact with databases like MySQL, PostgreSQL, Oracle, etc."
+      },
+
+      {
+        type: "heading",
+        content: "Steps in JDBC"
+      },
+
+      {
+        type: "list",
+        items: [
+          "Load the driver",
+          "Create connection",
+          "Create statement",
+          "Execute SQL query",
+          "Close connection"
+        ]
+      },
+
+      {
+        type: "heading",
+        content: "Example: Connect to MySQL"
+      },
+
+      {
+        type: "code",
+        content:
+          `Class.forName("com.mysql.cj.jdbc.Driver");
+
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/test", "root", "password");
+
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+
+while (rs.next()) {
+    System.out.println(rs.getString(1));
+}
+
+con.close();`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                          9. LAMBDA EXPRESSIONS                              */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "lambda",
+    title: "Lambda Expressions",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Lambda expressions provide a shorter way to write code for functional interfaces. They make Java cleaner and reduce boilerplate code."
+      },
+
+      {
+        type: "heading",
+        content: "Example"
+      },
+
+      {
+        type: "code",
+        content:
+          `interface Greeting {
+    void sayHello();
+}
+
+Greeting g = () -> System.out.println("Hello from Lambda!");
+g.sayHello();`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                           10. STREAMS API                                   */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "streams",
+    title: "Streams API",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Streams allow processing data in a declarative way using operations like filtering, mapping, and reducing. They are heavily used in modern Java."
+      },
+
+      {
+        type: "heading",
+        content: "Example: Filter Numbers"
+      },
+
+      {
+        type: "code",
+        content:
+          `List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
+
+nums.stream()
+    .filter(n -> n % 2 == 0)
+    .forEach(System.out::println);   // prints 2, 4`
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                               11. JVM BASICS                                 */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "jvm",
+    title: "JVM Internals",
+    sections: [
+      {
+        type: "text",
+        content:
+          "JVM (Java Virtual Machine) is responsible for running Java bytecode. It handles memory management, garbage collection, and optimizations."
+      },
+
+      {
+        type: "heading",
+        content: "JVM Components"
+      },
+
+      {
+        type: "list",
+        items: [
+          "Class Loader",
+          "Heap Memory",
+          "Stack Memory",
+          "Garbage Collector",
+          "JIT Compiler"
+        ]
+      },
+
+      {
+        type: "heading",
+        content: "Memory Areas"
+      },
+
+      {
+        type: "list",
+        items: [
+          "Heap — stores objects",
+          "Stack — stores method calls and local variables",
+          "Method Area — stores class data",
+          "PC Register — stores instruction address"
+        ]
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                         12. GARBAGE COLLECTION                               */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "garbage-collection",
+    title: "Garbage Collection",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Garbage Collection automatically removes objects that are no longer used, freeing memory."
+      },
+
+      {
+        type: "heading",
+        content: "How GC Works?"
+      },
+
+      {
+        type: "list",
+        items: [
+          "Tracks unused objects",
+          "Reclaims their memory",
+          "Prevents memory leaks"
+        ]
+      }
+    ]
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                             13. SERIALIZATION                                */
+  /* -------------------------------------------------------------------------- */
+
+  {
+    id: "serialization",
+    title: "Serialization",
+    sections: [
+      {
+        type: "text",
+        content:
+          "Serialization converts an object into a byte stream so it can be stored in files, databases, or sent over networks."
+      },
+
+      {
+        type: "heading",
+        content: "Example"
+      },
+
+      {
+        type: "code",
+        content:
+          `class Student implements Serializable {
+    String name;
+    int age;
+}
+
+ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("obj.dat"));
+out.writeObject(new Student());
+out.close();`
       }
     ]
   }
+
 ];
+
 
 function AdvanceJava() {
   const [activeTopic, setActiveTopic] = useState(topics[0].id);
@@ -575,7 +676,7 @@ function AdvanceJava() {
     <div className="python-container">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1 className="sidebar-title">Python Basics</h1>
+          <h1 className="sidebar-title">Advance Java</h1>
           <p className="sidebar-subtitle">Complete Learning Guide</p>
         </div>
 
