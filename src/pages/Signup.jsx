@@ -12,6 +12,7 @@ function Signup() {
     password: "",
     phone: "",
     role_description: "",
+    organization: "",
   });
 
   const [focusedField, setFocusedField] = useState("");
@@ -135,6 +136,23 @@ function Signup() {
               onFocus={() => setFocusedField("role_description")}
               onBlur={() => setFocusedField("")}
               className={`form-input ${focusedField === "role_description" ? "focused" : ""
+                }`}
+              required
+            />
+          </div>
+
+
+          <div className="form-group">
+            <label className="form-label">Organization</label>
+            <input
+              type="text"
+              name="organization"
+              placeholder="NIIT University, DPS, DAV"
+              value={form.organization}
+              onChange={handleChange}
+              onFocus={() => setFocusedField("organization")}
+              onBlur={() => setFocusedField("")}
+              className={`form-input ${focusedField === "organization" ? "focused" : ""
                 }`}
               required
             />
