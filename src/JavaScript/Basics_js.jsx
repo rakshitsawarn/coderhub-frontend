@@ -263,7 +263,7 @@ const topics = [
     id: "next-steps",
     title: "Next Steps & Learning Path",
     sections: [
-      { type: "text", content: "After basics, practice by building small projects: To‑Do app, calculator, a small game, or a data fetcher to display API data." },
+      { type: "text", content: "After basics, practice by building small projects: To-Do app, calculator, a small game, or a data fetcher to display API data." },
       { type: "list", items: ["Learn DOM deeply (forms, events, performance)", "Learn modern tooling: npm, bundlers (Vite/webpack)", "Learn a front-end framework: React / Vue / Svelte", "Learn Node.js basics for backend"] },
       { type: "heading", content: "How I would teach this to a class 1 student vs B.Tech" },
       { type: "text", content: "For class 1: use stories, analogies, and live playgrounds (like codepen) with instant visual feedback. For B.Tech: include engine internals, complexity, memory model, and module resolution. This document mixes both: simple analogies followed by technical notes in each section." }
@@ -271,8 +271,8 @@ const topics = [
   }
 ];
 
-// Export for use in other files if desired (uncomment in module environment)
-// export default topics;
+
+
 
 function Basics_js() {
   const [activeTopic, setActiveTopic] = useState(topics[0].id);
