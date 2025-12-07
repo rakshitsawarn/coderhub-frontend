@@ -2,27 +2,31 @@ import React, { useState } from "react";
 import "/src/python_css/Basics.css";
 
 const topics = [
+  // -------------------------------------------------
+  // 1. INTRODUCTION TO PYTHON
+  // -------------------------------------------------
   {
     id: "intro",
     title: "Introduction to Python",
     sections: [
       {
         type: "text",
-        content: "Python is a high-level, interpreted, general-purpose programming language. It is known for its simple syntax, which makes it very easy to learn and read."
+        content:
+          "Python is a high-level, interpreted, general-purpose programming language used for web development, data science, machine learning, automation, scripting, and more. It is known for its simple syntax, which makes it easy for beginners to learn and powerful enough for professionals."
       },
       {
         type: "heading",
-        content: "Why Python is Popular?"
+        content: "Key Features of Python"
       },
       {
         type: "list",
         items: [
-          "Easy to learn and read - Python's syntax is similar to English",
-          "Free and open-source - Download and use for free",
-          "Cross-platform - Works on Windows, Mac, and Linux",
-          "Large community - Millions of Python users worldwide",
-          "Versatile - Web dev, game dev, data science, ML, automation",
-          "Powerful libraries - NumPy, Pandas, Matplotlib, TensorFlow"
+          "Simple and Readable – Syntax is similar to English.",
+          "Interpreted Language – Runs line by line.",
+          "Cross-Platform – Works on Windows, Linux, and macOS.",
+          "Huge Community – Millions of developers worldwide.",
+          "Rich Libraries – NumPy, Pandas, Django, Flask, TensorFlow.",
+          "Versatile – Used in ML, AI, Cybersecurity, Web Dev, Automation."
         ]
       },
       {
@@ -32,26 +36,31 @@ const topics = [
       {
         type: "list",
         items: [
-          "Google - Search engines and AI projects",
-          "Netflix - Content recommendation systems",
-          "Instagram - Backend development",
-          "NASA - Scientific programming",
-          "Spotify - Data analysis and recommendations"
+          "Google – Machine learning and backend systems",
+          "Netflix – Recommendation algorithms",
+          "NASA – Scientific research and automation",
+          "Instagram – Backend server-side development",
+          "Spotify – Data analytics and recommendation engine"
         ]
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 2. PYTHON SYNTAX
+  // -------------------------------------------------
   {
     id: "syntax",
     title: "Python Syntax",
     sections: [
       {
         type: "text",
-        content: "Python syntax is simple and easy to read. Here's what you need to know:"
+        content:
+          "Python syntax is designed to be clean and readable. Indentation plays a major role in defining code blocks."
       },
       {
         type: "heading",
-        content: "Python Statements"
+        content: "Basic Python Statements"
       },
       {
         type: "code",
@@ -63,7 +72,8 @@ const topics = [
       },
       {
         type: "text",
-        content: "Python uses indentation (spaces) to define blocks of code:"
+        content:
+          "Python uses indentation (spaces) to define blocks of code such as inside loops, functions, and conditions."
       },
       {
         type: "code",
@@ -75,7 +85,7 @@ const topics = [
       },
       {
         type: "code",
-        content: `# Single-line comment\n\n"""\nMulti-line\ncomment\n"""`
+        content: `# Single-line comment\n\n"""\nMulti-line\ncomment\n""" `
       },
       {
         type: "heading",
@@ -87,13 +97,18 @@ const topics = [
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 3. VARIABLES
+  // -------------------------------------------------
   {
     id: "variables",
     title: "Variables",
     sections: [
       {
         type: "text",
-        content: "Variables are containers that store data in a program."
+        content:
+          "Variables are containers used to store data. In Python, you don't need to declare the type of a variable (dynamic typing)."
       },
       {
         type: "heading",
@@ -101,78 +116,112 @@ const topics = [
       },
       {
         type: "code",
-        content: `name = "Amit"    # String\nage = 10         # Integer\npi = 3.14        # Float`
+        content: `name = "Amit"      # String\nage = 20           # Integer\npi = 3.14          # Float`
       },
       {
         type: "heading",
-        content: "Naming Rules"
+        content: "Variable Naming Rules"
       },
       {
         type: "list",
         items: [
-          "Cannot start with a number",
-          "Case-sensitive (Name ≠ name)",
-          "Use meaningful names",
-          "Use letters, numbers, and underscores only"
+          "Must not start with a number.",
+          "Case-sensitive (Name ≠ name).",
+          "Should not contain special characters except underscore.",
+          "Use meaningful names for readability."
         ]
       },
       {
         type: "code",
-        content: `# Wrong\n1name = "Amit"\n\n# Correct\nname1 = "Amit"\nstudent_name = "Amit"`
+        content: `# Invalid\n1name = "Amit"\n\n# Valid\nname1 = "Amit"\nstudent_name = "Amit"`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 4. DATA TYPES
+  // -------------------------------------------------
   {
     id: "data-types",
     title: "Data Types",
     sections: [
       {
         type: "text",
-        content: "A data type tells Python what kind of data is stored in a variable."
+        content:
+          "A data type tells Python what type of value is stored inside a variable."
       },
       {
         type: "heading",
         content: "Common Data Types"
       },
+
+      // Integer
       {
         type: "datatype",
         name: "Integer (int)",
-        desc: "Whole numbers",
+        desc: "Whole numbers without decimals.",
         code: `x = 10\ny = -5`
       },
+
+      // Float
       {
         type: "datatype",
         name: "Float (float)",
-        desc: "Decimal numbers",
+        desc: "Numbers with decimal values.",
         code: `pi = 3.14\ntemp = -2.5`
       },
+
+      // String
       {
         type: "datatype",
         name: "String (str)",
-        desc: "Text in quotes",
-        code: `name = "Amit"\ngreeting = 'Hello'`
+        desc: "Sequence of characters enclosed in quotes.",
+        code: `name = "Amit"\nmsg = 'Hello'`
       },
+
+      // Boolean
       {
         type: "datatype",
         name: "Boolean (bool)",
-        desc: "True or False",
+        desc: "Represents True or False values.",
         code: `is_raining = True\nis_sunny = False`
       },
+
+      // List
       {
         type: "datatype",
         name: "List (list)",
-        desc: "Ordered collection",
+        desc: "Ordered and changeable collection of items.",
         code: `fruits = ["apple", "banana"]\nnumbers = [1, 2, 3]`
       },
+
+      // Tuple
+      {
+        type: "datatype",
+        name: "Tuple (tuple)",
+        desc: "Ordered and unchangeable collection of items.",
+        code: `point = (10, 20)`
+      },
+
+      // Dictionary
       {
         type: "datatype",
         name: "Dictionary (dict)",
-        desc: "Key-value pairs",
+        desc: "Stores data in key-value pairs.",
         code: `student = {\n  "name": "Amit",\n  "age": 12\n}`
       },
+
+      // Set
+      {
+        type: "datatype",
+        name: "Set (set)",
+        desc: "Unordered collection of unique values.",
+        code: `unique = {1, 2, 3, 3}    # duplicates removed`
+      },
+
       {
         type: "heading",
-        content: "Check Data Type"
+        content: "Checking Data Type"
       },
       {
         type: "code",
@@ -180,22 +229,29 @@ const topics = [
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 5. OPERATORS
+  // -------------------------------------------------
   {
     id: "operators",
     title: "Operators",
     sections: [
       {
         type: "text",
-        content: "Operators perform operations on values and variables."
+        content:
+          "Operators are symbols used to perform operations on variables and values."
       },
+
       {
         type: "heading",
         content: "Arithmetic Operators"
       },
       {
         type: "code",
-        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulo\n**  # Exponent\n//  # Floor division`
+        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulus\n**  # Exponent\n//  # Floor Division`
       },
+
       {
         type: "heading",
         content: "Comparison Operators"
@@ -204,23 +260,37 @@ const topics = [
         type: "code",
         content: `==  # Equal to\n!=  # Not equal\n>   # Greater than\n<   # Less than\n>=  # Greater or equal\n<=  # Less or equal`
       },
+
+      {
+        type: "heading",
+        content: "Logical Operators"
+      },
+      {
+        type: "code",
+        content: `and   # Both conditions must be True\nor    # At least one condition True\nnot   # Reverses the condition`
+      },
+
       {
         type: "heading",
         content: "Example"
       },
       {
         type: "code",
-        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a ** 2)  # 100\nprint(a > b)   # True`
+        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a > b)   # True\nprint(a == 10 and b < 3)  # False`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 6. STRINGS
+  // -------------------------------------------------
   {
     id: "strings",
     title: "Strings",
     sections: [
       {
         type: "text",
-        content: "Strings are text enclosed in quotes."
+        content: "Strings represent text in Python and are enclosed in quotes."
       },
       {
         type: "code",
@@ -240,55 +310,66 @@ const topics = [
       },
       {
         type: "code",
-        content: `# Concatenation\nnew_text = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
+        content: `# Concatenation\nmsg = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 7. STRING METHODS
+  // -------------------------------------------------
   {
     id: "string-methods",
     title: "String Methods",
     sections: [
       {
         type: "text",
-        content: "String methods help you work with text easily."
+        content:
+          "String methods allow easy manipulation of text like converting case, replacing characters, splitting text, etc."
       },
+
       {
         type: "method",
-        name: "upper() & lower()",
-        code: `text = "Hello"\nprint(text.upper())  # HELLO\nprint(text.lower())  # hello`
+        name: "upper() / lower()",
+        code: `text = "Hello"\nprint(text.upper())\nprint(text.lower())`
       },
       {
         type: "method",
         name: "strip()",
-        code: `text = "  Python  "\nprint(text.strip())  # Python`
+        code: `text = "  Python  "\nprint(text.strip())  # removes spaces`
       },
       {
         type: "method",
         name: "replace()",
-        code: `text = "Hello"\nprint(text.replace("H", "Y"))  # Yello`
+        code: `text = "Hello"\nprint(text.replace("H", "Y"))`
       },
       {
         type: "method",
         name: "split()",
-        code: `text = "Hello World"\nprint(text.split())  # ['Hello', 'World']`
+        code: `text = "Hello World"\nprint(text.split())`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 8. LISTS
+  // -------------------------------------------------
   {
     id: "lists",
     title: "Lists",
     sections: [
       {
         type: "text",
-        content: "Lists store multiple values in a single variable."
+        content:
+          "Lists store multiple values in a single variable. They are ordered and changeable."
       },
       {
         type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]\nmixed = [1, "apple", 3.5, True]`
+        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]`
       },
       {
         type: "heading",
-        content: "Accessing Items"
+        content: "Accessing List Items"
       },
       {
         type: "code",
@@ -300,10 +381,14 @@ const topics = [
       },
       {
         type: "code",
-        content: `fruits[1] = "orange"      # Change\nfruits.append("grapes")   # Add\nfruits.remove("apple")    # Remove`
+        content: `fruits[1] = "orange"\nfruits.append("grapes")\nfruits.remove("apple")`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 9. LIST METHODS
+  // -------------------------------------------------
   {
     id: "list-methods",
     title: "List Methods",
@@ -311,32 +396,37 @@ const topics = [
       {
         type: "method",
         name: "append()",
-        code: `fruits = ["apple"]\nfruits.append("banana")\nprint(fruits)  # ['apple', 'banana']`
+        code: `fruits = ["apple"]\nfruits.append("banana")`
       },
       {
         type: "method",
         name: "insert()",
-        code: `fruits.insert(0, "mango")\nprint(fruits)  # ['mango', 'apple', 'banana']`
+        code: `fruits.insert(0, "mango")`
       },
       {
         type: "method",
         name: "sort()",
-        code: `nums = [3, 1, 2]\nnums.sort()\nprint(nums)  # [1, 2, 3]`
+        code: `nums = [3, 1, 2]\nnums.sort()`
       },
       {
         type: "method",
         name: "reverse()",
-        code: `nums.reverse()\nprint(nums)  # [3, 2, 1]`
+        code: `nums.reverse()`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 10. DICTIONARIES
+  // -------------------------------------------------
   {
     id: "dictionaries",
     title: "Dictionaries",
     sections: [
       {
         type: "text",
-        content: "Dictionaries store data in key-value pairs."
+        content:
+          "Dictionaries store data in key-value pairs and are useful for structured information."
       },
       {
         type: "code",
@@ -344,11 +434,11 @@ const topics = [
       },
       {
         type: "heading",
-        content: "Accessing Items"
+        content: "Accessing Values"
       },
       {
         type: "code",
-        content: `print(student["name"])  # Amit\nprint(student["age"])   # 12`
+        content: `print(student["name"])  # Amit`
       },
       {
         type: "heading",
@@ -356,21 +446,26 @@ const topics = [
       },
       {
         type: "code",
-        content: `student["age"] = 13        # Change\nstudent["grade"] = "A"     # Add\ndel student["class"]       # Remove`
+        content: `student["age"] = 13\nstudent["grade"] = "A"\ndel student["class"]`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 11. CONDITIONS
+  // -------------------------------------------------
   {
     id: "conditions",
-    title: "Conditions (if/elif/else)",
+    title: "Conditions (if / elif / else)",
     sections: [
       {
         type: "text",
-        content: "Conditions allow Python to make decisions."
+        content:
+          "Conditional statements allow Python to make decisions based on conditions."
       },
       {
         type: "code",
-        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")\n\n# Output: Big`
+        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")`
       },
       {
         type: "heading",
@@ -382,39 +477,51 @@ const topics = [
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 12. LOOPS
+  // -------------------------------------------------
   {
     id: "loops",
-    title: "Loops (for/while)",
+    title: "Loops (for / while)",
     sections: [
       {
         type: "text",
-        content: "Loops repeat actions multiple times."
+        content:
+          "Loops allow repeating an action multiple times until a condition is met."
       },
+
       {
         type: "heading",
         content: "For Loop"
       },
       {
         type: "code",
-        content: `for i in range(5):\n    print(i)\n\n# Output: 0, 1, 2, 3, 4`
+        content: `for i in range(5):\n    print(i)`
       },
+
       {
         type: "heading",
         content: "While Loop"
       },
       {
         type: "code",
-        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Output: 0, 1, 2, 3, 4`
+        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 13. FUNCTIONS
+  // -------------------------------------------------
   {
     id: "functions",
     title: "Functions",
     sections: [
       {
         type: "text",
-        content: "Functions are reusable blocks of code."
+        content:
+          "Functions are reusable blocks of code that perform a specific task."
       },
       {
         type: "heading",
@@ -430,81 +537,100 @@ const topics = [
       },
       {
         type: "code",
-        content: `greet("Amit")  # Output: Hello Amit`
+        content: `greet("Amit")`
       },
       {
         type: "heading",
-        content: "Functions with Return"
+        content: "Return Values"
       },
       {
         type: "code",
-        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)  # 15`
+        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 14. MODULES
+  // -------------------------------------------------
   {
     id: "modules",
     title: "Modules",
     sections: [
       {
         type: "text",
-        content: "Modules are Python files containing functions and variables."
+        content:
+          "Modules are Python files that contain functions, variables, or classes. You can import them into other programs."
       },
+
       {
         type: "heading",
-        content: "Using Math Module"
+        content: "Math Module"
       },
       {
         type: "code",
-        content: `import math\n\nprint(math.sqrt(16))   # 4.0\nprint(math.ceil(4.2))  # 5\nprint(math.floor(4.8)) # 4\nprint(math.pi)         # 3.14159...`
+        content: `import math\n\nprint(math.sqrt(16))\nprint(math.pi)`
       },
+
       {
         type: "heading",
-        content: "Using Random Module"
+        content: "Random Module"
       },
       {
         type: "code",
-        content: `import random\n\nprint(random.randint(1, 10))  # Random number\nprint(random.choice([1,2,3])) # Random choice`
+        content: `import random\n\nprint(random.randint(1, 10))\nprint(random.choice([1, 2, 3]))`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 15. FILE HANDLING
+  // -------------------------------------------------
   {
     id: "file-handling",
     title: "File Handling",
     sections: [
       {
         type: "text",
-        content: "Python can read and write files."
+        content:
+          "Python allows reading and writing files for storing and loading data."
       },
+
       {
         type: "heading",
         content: "Reading a File"
       },
       {
         type: "code",
-        content: `with open("file.txt", "r") as f:\n    content = f.read()\n    print(content)`
+        content: `with open("data.txt", "r") as f:\n    content = f.read()\n    print(content)`
       },
+
       {
         type: "heading",
         content: "Writing to a File"
       },
       {
         type: "code",
-        content: `with open("file.txt", "w") as f:\n    f.write("Hello World")`
+        content: `with open("data.txt", "w") as f:\n    f.write("Hello World")`
       }
     ]
   },
+
+  // -------------------------------------------------
+  // 16. EXCEPTION HANDLING
+  // -------------------------------------------------
   {
     id: "exception-handling",
     title: "Exception Handling",
     sections: [
       {
         type: "text",
-        content: "Handle errors gracefully with try-except blocks."
+        content:
+          "Exceptions are errors that occur during runtime. Python provides try-except blocks to handle them gracefully."
       },
       {
         type: "code",
-        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nfinally:\n    print("This always runs")`
+        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("You cannot divide by zero.")\nfinally:\n    print("This block always runs.")`
       }
     ]
   }
