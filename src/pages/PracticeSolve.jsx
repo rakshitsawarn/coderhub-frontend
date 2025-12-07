@@ -4,10 +4,6 @@ import Editor from "@monaco-editor/react";
 import "/src/css_files/PracticeSolve.css";
 
 const languageMap = {
-  C: 50,
-  "C#": 51,
-  "C++": 54,
-  Dart: 90,
   Java: 62,
   JavaScript: 63,
   Python: 71,
@@ -1126,14 +1122,7 @@ ${complexityResult.improvementSuggestions?.suggestions?.map(suggestion => `• $
 
           <div className="toolbar-right-split">
             {/* Gemini Buttons */}
-            <button
-              className="gemini-button-split"
-              onClick={debugWithGemini}
-              disabled={!output || !mediaAccessGranted}
-              title="Get AI-powered debugging help"
-            >
-              <span>🐛 Debug</span>
-            </button>
+
 
             <button
               className="gemini-button-split"
