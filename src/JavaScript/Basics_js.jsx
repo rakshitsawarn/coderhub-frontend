@@ -6,509 +6,273 @@ const topics = [
     id: "intro",
     title: "Introduction to JavaScript",
     sections: [
+      { type: "text", content: "JavaScript (JS) is a programming language that helps make web pages interactive. Think of HTML as the skeleton, CSS as the clothes, and JavaScript as the muscles that make things move and respond." },
+      { type: "heading", content: "Why learn JavaScript?" },
       {
-        type: "text",
-        content: "Python is a high-level, interpreted, general-purpose programming language. It is known for its simple syntax, which makes it very easy to learn and read."
-      },
-      {
-        type: "heading",
-        content: "Why Python is Popular?"
-      },
-      {
-        type: "list",
-        items: [
-          "Easy to learn and read - Python's syntax is similar to English",
-          "Free and open-source - Download and use for free",
-          "Cross-platform - Works on Windows, Mac, and Linux",
-          "Large community - Millions of Python users worldwide",
-          "Versatile - Web dev, game dev, data science, ML, automation",
-          "Powerful libraries - NumPy, Pandas, Matplotlib, TensorFlow"
+        type: "list", items: [
+          "Runs in every web browser — so your code can reach billions of users",
+          "Used for front-end (browser) and back-end (Node.js)",
+          "Great community and lots of tools",
+          "Easy start (you can open DevTools and try immediately)"
         ]
       },
-      {
-        type: "heading",
-        content: "Who Uses Python?"
-      },
-      {
-        type: "list",
-        items: [
-          "Google - Search engines and AI projects",
-          "Netflix - Content recommendation systems",
-          "Instagram - Backend development",
-          "NASA - Scientific programming",
-          "Spotify - Data analysis and recommendations"
-        ]
-      }
+      { type: "heading", content: "Analogy for kids" },
+      { type: "text", content: "If a webpage is a toy, JavaScript is the switch that makes the toy move — press the button and it dances." }
+    ]
+  },
+  {
+    id: "hello-world",
+    title: "First Program — Hello World",
+    sections: [
+      { type: "text", content: "The simplest JavaScript program prints text to the console or shows an alert." },
+      { type: "code", content: "// Open browser DevTools (F12) to see console output\nconsole.log('Hello, JavaScript!');\nalert('Hello, JavaScript!');" },
+      { type: "heading", content: "Kid-friendly explanation" },
+      { type: "text", content: "console.log is like writing a note on the computer's diary (the console). alert shows a message box on the screen like a pop-up sticker." }
     ]
   },
   {
     id: "syntax",
-    title: "Python Syntax",
+    title: "Basic Syntax & Statements",
     sections: [
+      { type: "text", content: "JavaScript reads commands from top to bottom. Each command can be a statement ending with a semicolon (optional in most cases)." },
+      { type: "heading", content: "Example" },
+      { type: "code", content: "let x = 5;\nlet y = 3;\nconsole.log(x + y); // 8" },
+      { type: "heading", content: "Tips for beginners" },
       {
-        type: "text",
-        content: "Python syntax is simple and easy to read. Here's what you need to know:"
-      },
-      {
-        type: "heading",
-        content: "Python Statements"
-      },
-      {
-        type: "code",
-        content: `x = 5\ny = 10\nprint(x + y)  # Output: 15`
-      },
-      {
-        type: "heading",
-        content: "Indentation"
-      },
-      {
-        type: "text",
-        content: "Python uses indentation (spaces) to define blocks of code:"
-      },
-      {
-        type: "code",
-        content: `if x > 0:\n    print("Positive")\nelse:\n    print("Non-positive")`
-      },
-      {
-        type: "heading",
-        content: "Comments"
-      },
-      {
-        type: "code",
-        content: `# Single-line comment\n\n"""\nMulti-line\ncomment\n"""`
-      },
-      {
-        type: "heading",
-        content: "First Python Program"
-      },
-      {
-        type: "code",
-        content: `print("Hello, Python!")`
+        type: "list", items: [
+          "Whitespace (spaces/newlines) usually doesn't matter",
+          "Use indentation to make code readable",
+          "Comments start with // for one line, /* ... */ for block comments"
+        ]
       }
     ]
   },
   {
     id: "variables",
-    title: "Variables",
+    title: "Variables (let / const / var)",
     sections: [
+      { type: "text", content: "Variables are named boxes that store values. Use names that describe the content." },
+      { type: "heading", content: "Keywords" },
       {
-        type: "text",
-        content: "Variables are containers that store data in a program."
-      },
-      {
-        type: "heading",
-        content: "Example"
-      },
-      {
-        type: "code",
-        content: `name = "Amit"    # String\nage = 10         # Integer\npi = 3.14        # Float`
-      },
-      {
-        type: "heading",
-        content: "Naming Rules"
-      },
-      {
-        type: "list",
-        items: [
-          "Cannot start with a number",
-          "Case-sensitive (Name ≠ name)",
-          "Use meaningful names",
-          "Use letters, numbers, and underscores only"
+        type: "list", items: [
+          "var — old way, function-scoped (avoid in modern code)",
+          "let — block-scoped, can be reassigned",
+          "const — block-scoped, cannot be reassigned (the box can't be reassigned, but contents can change if it's an object)"
         ]
       },
-      {
-        type: "code",
-        content: `# Wrong\n1name = "Amit"\n\n# Correct\nname1 = "Amit"\nstudent_name = "Amit"`
-      }
+      { type: "code", content: "let name = 'Asha';\nconst PI = 3.14159;\nvar legacy = 10;" },
+      { type: "heading", content: "Kid explanation" },
+      { type: "text", content: "Imagine labeled jars: a jar named 'age' holds the number 7. You can change what's inside a 'let' jar, but a 'const' jar's label says 'do not replace this jar'." }
     ]
   },
   {
     id: "data-types",
-    title: "Data Types",
+    title: "Data Types (Primitives & Objects)",
     sections: [
-      {
-        type: "text",
-        content: "A data type tells Python what kind of data is stored in a variable."
-      },
-      {
-        type: "heading",
-        content: "Common Data Types"
-      },
-      {
-        type: "datatype",
-        name: "Integer (int)",
-        desc: "Whole numbers",
-        code: `x = 10\ny = -5`
-      },
-      {
-        type: "datatype",
-        name: "Float (float)",
-        desc: "Decimal numbers",
-        code: `pi = 3.14\ntemp = -2.5`
-      },
-      {
-        type: "datatype",
-        name: "String (str)",
-        desc: "Text in quotes",
-        code: `name = "Amit"\ngreeting = 'Hello'`
-      },
-      {
-        type: "datatype",
-        name: "Boolean (bool)",
-        desc: "True or False",
-        code: `is_raining = True\nis_sunny = False`
-      },
-      {
-        type: "datatype",
-        name: "List (list)",
-        desc: "Ordered collection",
-        code: `fruits = ["apple", "banana"]\nnumbers = [1, 2, 3]`
-      },
-      {
-        type: "datatype",
-        name: "Dictionary (dict)",
-        desc: "Key-value pairs",
-        code: `student = {\n  "name": "Amit",\n  "age": 12\n}`
-      },
-      {
-        type: "heading",
-        content: "Check Data Type"
-      },
-      {
-        type: "code",
-        content: `x = 10\nprint(type(x))  # <class 'int'>`
-      }
+      { type: "text", content: "JS has simple (primitive) and complex (reference) types. Knowing them helps avoid bugs." },
+      { type: "datatype", name: "Number", desc: "All numbers (integers and floats) share the same type", code: "let n = 42; let pi = 3.14;" },
+      { type: "datatype", name: "String", desc: "Text inside quotes", code: "let s = 'hello'; let t = \"world\";" },
+      { type: "datatype", name: "Boolean", desc: "true or false", code: "let ok = true;" },
+      { type: "datatype", name: "Undefined", desc: "Variable declared but no value", code: "let a; // undefined" },
+      { type: "datatype", name: "Null", desc: "Intentional empty value", code: "let b = null;" },
+      { type: "datatype", name: "Symbol", desc: "Unique identifier (rarely used in basics)", code: "let id = Symbol('id');" },
+      { type: "datatype", name: "BigInt", desc: "Big integers beyond Number limits", code: "let big = 12345678901234567890n;" },
+      { type: "datatype", name: "Object", desc: "Collection of key-value pairs and complex structures", code: "let obj = { name: 'Asha', age: 7 };" },
+      { type: "heading", content: "Quick checks" },
+      { type: "code", content: "console.log(typeof 5); // 'number'\nconsole.log(typeof 'hi'); // 'string'\nconsole.log(typeof null); // 'object' (historic quirk)" }
     ]
   },
   {
     id: "operators",
     title: "Operators",
     sections: [
-      {
-        type: "text",
-        content: "Operators perform operations on values and variables."
-      },
-      {
-        type: "heading",
-        content: "Arithmetic Operators"
-      },
-      {
-        type: "code",
-        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulo\n**  # Exponent\n//  # Floor division`
-      },
-      {
-        type: "heading",
-        content: "Comparison Operators"
-      },
-      {
-        type: "code",
-        content: `==  # Equal to\n!=  # Not equal\n>   # Greater than\n<   # Less than\n>=  # Greater or equal\n<=  # Less or equal`
-      },
-      {
-        type: "heading",
-        content: "Example"
-      },
-      {
-        type: "code",
-        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a ** 2)  # 100\nprint(a > b)   # True`
-      }
+      { type: "text", content: "Operators let you work with values: math, comparisons, logic, and more." },
+      { type: "heading", content: "Arithmetic" },
+      { type: "code", content: "+, -, *, /, %, ** (power)\nlet sum = 2 + 3;" },
+      { type: "heading", content: "Assignment" },
+      { type: "code", content: "=, +=, -=, *=, /=\nlet x = 5; x += 2; // 7" },
+      { type: "heading", content: "Comparison" },
+      { type: "code", content: "== (loose), === (strict), !=, !==, >, <, >=, <=\n0 == '0' // true, 0 === '0' // false" },
+      { type: "heading", content: "Logical" },
+      { type: "code", content: "&& (and), || (or), ! (not)\nlet ok = true && false; // false" },
+      { type: "heading", content: "Kid tip" },
+      { type: "text", content: "Think of == as 'looks equal' and === as 'is exactly the same type and value'. Prefer === in most cases." }
     ]
   },
   {
     id: "strings",
-    title: "Strings",
+    title: "Strings & String Methods",
     sections: [
-      {
-        type: "text",
-        content: "Strings are text enclosed in quotes."
-      },
-      {
-        type: "code",
-        content: `name = "Python"\ngreeting = 'Hello'`
-      },
-      {
-        type: "heading",
-        content: "String Indexing"
-      },
-      {
-        type: "code",
-        content: `text = "Hello"\nprint(text[0])   # H\nprint(text[-1])  # o`
-      },
-      {
-        type: "heading",
-        content: "String Operations"
-      },
-      {
-        type: "code",
-        content: `# Concatenation\nnew_text = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
-      }
+      { type: "text", content: "Strings are sequences of characters. You can join, split, search, and change them." },
+      { type: "code", content: "let s = 'Hello';\nconsole.log(s.length); // 5\nconsole.log(s[0]); // 'H'" },
+      { type: "heading", content: "Useful methods" },
+      { type: "list", items: ["toUpperCase(), toLowerCase()", "trim()", "slice(start, end)", "split(separator)", "replace(old, new)", "includes(substring)"] },
+      { type: "code", content: "' hello '.trim(); // 'hello'\n'one,two'.split(','); // ['one','two']" }
     ]
   },
   {
-    id: "string-methods",
-    title: "String Methods",
+    id: "arrays",
+    title: "Arrays (Lists)",
     sections: [
-      {
-        type: "text",
-        content: "String methods help you work with text easily."
-      },
-      {
-        type: "method",
-        name: "upper() & lower()",
-        code: `text = "Hello"\nprint(text.upper())  # HELLO\nprint(text.lower())  # hello`
-      },
-      {
-        type: "method",
-        name: "strip()",
-        code: `text = "  Python  "\nprint(text.strip())  # Python`
-      },
-      {
-        type: "method",
-        name: "replace()",
-        code: `text = "Hello"\nprint(text.replace("H", "Y"))  # Yello`
-      },
-      {
-        type: "method",
-        name: "split()",
-        code: `text = "Hello World"\nprint(text.split())  # ['Hello', 'World']`
-      }
+      { type: "text", content: "Arrays store ordered lists of items. Items can be any type, even other arrays." },
+      { type: "code", content: "let arr = ['apple', 'banana', 'cherry'];\nconsole.log(arr[0]); // 'apple'\narr.push('date'); // add at end" },
+      { type: "heading", content: "Basic methods" },
+      { type: "list", items: ["push(), pop()", "shift(), unshift()", "indexOf(), includes()", "splice(start, deleteCount, ...items)"] },
+      { type: "heading", content: "Kid explanation" },
+      { type: "text", content: "An array is like a row of boxes labeled 0,1,2... You can put toys (values) in each box." }
     ]
   },
   {
-    id: "lists",
-    title: "Lists",
+    id: "array-iterators",
+    title: "Array Iteration & Higher-Order Methods",
     sections: [
-      {
-        type: "text",
-        content: "Lists store multiple values in a single variable."
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]\nmixed = [1, "apple", 3.5, True]`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nprint(fruits[0])   # apple\nprint(fruits[-1])  # banana`
-      },
-      {
-        type: "heading",
-        content: "Modifying Lists"
-      },
-      {
-        type: "code",
-        content: `fruits[1] = "orange"      # Change\nfruits.append("grapes")   # Add\nfruits.remove("apple")    # Remove`
-      }
+      { type: "text", content: "Modern JS uses methods that take functions to process arrays — powerful and expressive." },
+      { type: "list", items: ["forEach(callback)", "map(callback) — transforms items and returns new array", "filter(callback) — keeps items that match", "reduce(callback, initial) — reduces to single value", "find(), findIndex(), some(), every()"] },
+      { type: "code", content: "let nums = [1,2,3];\nlet squared = nums.map(n => n*n);\nlet evens = nums.filter(n => n%2===0);" },
+      { type: "heading", content: "Advanced note" },
+      { type: "text", content: "These methods take callbacks; understanding functions is key to using them well." }
     ]
   },
   {
-    id: "list-methods",
-    title: "List Methods",
+    id: "objects",
+    title: "Objects (Key-Value Pairs)",
     sections: [
-      {
-        type: "method",
-        name: "append()",
-        code: `fruits = ["apple"]\nfruits.append("banana")\nprint(fruits)  # ['apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "insert()",
-        code: `fruits.insert(0, "mango")\nprint(fruits)  # ['mango', 'apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "sort()",
-        code: `nums = [3, 1, 2]\nnums.sort()\nprint(nums)  # [1, 2, 3]`
-      },
-      {
-        type: "method",
-        name: "reverse()",
-        code: `nums.reverse()\nprint(nums)  # [3, 2, 1]`
-      }
-    ]
-  },
-  {
-    id: "dictionaries",
-    title: "Dictionaries",
-    sections: [
-      {
-        type: "text",
-        content: "Dictionaries store data in key-value pairs."
-      },
-      {
-        type: "code",
-        content: `student = {\n  "name": "Amit",\n  "age": 12,\n  "class": 7\n}`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `print(student["name"])  # Amit\nprint(student["age"])   # 12`
-      },
-      {
-        type: "heading",
-        content: "Modifying Dictionary"
-      },
-      {
-        type: "code",
-        content: `student["age"] = 13        # Change\nstudent["grade"] = "A"     # Add\ndel student["class"]       # Remove`
-      }
-    ]
-  },
-  {
-    id: "conditions",
-    title: "Conditions (if/elif/else)",
-    sections: [
-      {
-        type: "text",
-        content: "Conditions allow Python to make decisions."
-      },
-      {
-        type: "code",
-        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")\n\n# Output: Big`
-      },
-      {
-        type: "heading",
-        content: "Combining Conditions"
-      },
-      {
-        type: "code",
-        content: `if x > 5 and x < 15:\n    print("x is between 5 and 15")`
-      }
-    ]
-  },
-  {
-    id: "loops",
-    title: "Loops (for/while)",
-    sections: [
-      {
-        type: "text",
-        content: "Loops repeat actions multiple times."
-      },
-      {
-        type: "heading",
-        content: "For Loop"
-      },
-      {
-        type: "code",
-        content: `for i in range(5):\n    print(i)\n\n# Output: 0, 1, 2, 3, 4`
-      },
-      {
-        type: "heading",
-        content: "While Loop"
-      },
-      {
-        type: "code",
-        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Output: 0, 1, 2, 3, 4`
-      }
+      { type: "text", content: "Objects store data as properties: keys (strings or symbols) mapped to values." },
+      { type: "code", content: "let student = { name: 'Asha', age: 7 };\nconsole.log(student.name);\nstudent.grade = 'A';" },
+      { type: "heading", content: "Methods on objects" },
+      { type: "code", content: "let person = { greet() { console.log('Hi'); } }; person.greet();" },
+      { type: "heading", content: "Destructuring" },
+      { type: "code", content: "let { name, age } = student; // pull properties into variables" }
     ]
   },
   {
     id: "functions",
-    title: "Functions",
+    title: "Functions (Reusable Pieces)",
     sections: [
-      {
-        type: "text",
-        content: "Functions are reusable blocks of code."
-      },
-      {
-        type: "heading",
-        content: "Creating a Function"
-      },
-      {
-        type: "code",
-        content: `def greet(name):\n    print("Hello", name)`
-      },
-      {
-        type: "heading",
-        content: "Using a Function"
-      },
-      {
-        type: "code",
-        content: `greet("Amit")  # Output: Hello Amit`
-      },
-      {
-        type: "heading",
-        content: "Functions with Return"
-      },
-      {
-        type: "code",
-        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)  # 15`
-      }
+      { type: "text", content: "Functions are named actions you can run multiple times. They can take inputs and return outputs." },
+      { type: "code", content: "function add(a, b) { return a + b; }\nconst square = x => x * x;\nconsole.log(add(2,3)); // 5" },
+      { type: "heading", content: "Parameters vs Arguments" },
+      { type: "text", content: "Parameters are the names in the function definition, arguments are the actual values you pass." },
+      { type: "heading", content: "Default & Rest parameters" },
+      { type: "code", content: "function greet(name='friend') { console.log('Hi ' + name); }\nfunction sum(...nums) { return nums.reduce((s,n)=>s+n,0); }" }
+    ]
+  },
+  {
+    id: "scope-hoisting",
+    title: "Scope & Hoisting (Who can see what)",
+    sections: [
+      { type: "text", content: "Scope defines where variables exist: global scope, function scope, and block scope. Hoisting means declarations are processed before code runs (but not initializations)." },
+      { type: "code", content: "{ let x = 1; }\n// x is not visible here\nfunction f() { var y = 2; }\n// y is not visible here" },
+      { type: "heading", content: "Kid-friendly" },
+      { type: "text", content: "Imagine rooms in a house: toys kept in a room are only available inside that room unless you take them out." }
+    ]
+  },
+  {
+    id: "this-and-bind",
+    title: "The this keyword & Function binding",
+    sections: [
+      { type: "text", content: "this refers to the object that called the function (context). In arrow functions, this is taken from the surrounding context." },
+      { type: "code", content: "const obj = { name: 'A', greet() { console.log(this.name); } }; obj.greet(); // 'A'\nconst f = obj.greet; f(); // undefined or global depending on environment" },
+      { type: "heading", content: "call, apply, bind" },
+      { type: "code", content: "function say() { console.log(this.name); }\nsay.call({name:'B'});\nlet bound = say.bind({name:'C'}); bound();" }
+    ]
+  },
+  {
+    id: "closures",
+    title: "Closures (Functions remembering)",
+    sections: [
+      { type: "text", content: "A closure is when a function 'remembers' the variables from the place it was created, even if run later." },
+      { type: "code", content: "function counter() { let count = 0; return function() { count++; return count; } }\nlet c = counter(); console.log(c()); //1 console.log(c()); //2" },
+      { type: "heading", content: "Why useful?" },
+      { type: "list", items: ["Keep private data (data hiding)", "Create factories and helpers", "Work with asynchronous callbacks"] }
+    ]
+  },
+  {
+    id: "async-basics",
+    title: "Asynchronous JavaScript (Callbacks, Promises, async/await)",
+    sections: [
+      { type: "text", content: "JavaScript does not block the page while waiting for slow tasks (like loading data). Instead it uses asynchronous patterns." },
+      { type: "heading", content: "Callback example" },
+      { type: "code", content: "setTimeout(() => console.log('later'), 1000);" },
+      { type: "heading", content: "Promise example" },
+      { type: "code", content: "fetch('/data.json')\n  .then(res => res.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));" },
+      { type: "heading", content: "async/await" },
+      { type: "code", content: "async function getData() { try { let res = await fetch('/data.json'); let data = await res.json(); console.log(data); } catch(e) { console.error(e); } }" },
+      { type: "heading", content: "Kid explanation" },
+      { type: "text", content: "Think of async tasks as asking a friend to bring a book later — you continue playing and use the book when it arrives." }
+    ]
+  },
+  {
+    id: "dom-basics",
+    title: "DOM Basics (Make the page move)",
+    sections: [
+      { type: "text", content: "The DOM (Document Object Model) is the page structure your JavaScript can read and change." },
+      { type: "code", content: "const el = document.querySelector('#myBtn'); el.textContent = 'Click me';" },
+      { type: "heading", content: "Events" },
+      { type: "code", content: "el.addEventListener('click', () => console.log('clicked'));" },
+      { type: "heading", content: "Kid-friendly" },
+      { type: "text", content: "The DOM is like a tree of Lego blocks you can pick and repaint with JS." }
+    ]
+  },
+  {
+    id: "debugging",
+    title: "Debugging & DevTools",
+    sections: [
+      { type: "text", content: "Use console.log, breakpoints, and the Sources panel to step through code. Read error messages — they tell where things went wrong." },
+      { type: "list", items: ["console.log(), console.warn(), console.error()", "Use debugger; to pause execution", "Inspect variables in DevTools"] },
+      { type: "code", content: "// Pause here\ndebugger;" }
+    ]
+  },
+  {
+    id: "errors-exceptions",
+    title: "Errors & Exception Handling",
+    sections: [
+      { type: "text", content: "Handle failures gracefully using try/catch. Not every error should crash your app." },
+      { type: "code", content: "try { JSON.parse(bad); } catch(e) { console.error('Parsing failed', e); } finally { console.log('Always runs'); }" }
     ]
   },
   {
     id: "modules",
-    title: "Modules",
+    title: "Modules (import / export)",
     sections: [
-      {
-        type: "text",
-        content: "Modules are Python files containing functions and variables."
-      },
-      {
-        type: "heading",
-        content: "Using Math Module"
-      },
-      {
-        type: "code",
-        content: `import math\n\nprint(math.sqrt(16))   # 4.0\nprint(math.ceil(4.2))  # 5\nprint(math.floor(4.8)) # 4\nprint(math.pi)         # 3.14159...`
-      },
-      {
-        type: "heading",
-        content: "Using Random Module"
-      },
-      {
-        type: "code",
-        content: `import random\n\nprint(random.randint(1, 10))  # Random number\nprint(random.choice([1,2,3])) # Random choice`
-      }
+      { type: "text", content: "Break code into files using modules. Use export to share and import to take functions/values from other files." },
+      { type: "code", content: "// math.js\nexport function add(a,b) { return a+b; }\n// main.js\nimport { add } from './math.js'; console.log(add(2,3));" },
+      { type: "heading", content: "Note" },
+      { type: "text", content: "Module syntax (ESM) is standard in modern JS. Node.js supports it with .mjs or package.json type: 'module' or use CommonJS (require) in older projects." }
     ]
   },
   {
-    id: "file-handling",
-    title: "File Handling",
+    id: "best-practices",
+    title: "Best Practices & Tips",
     sections: [
       {
-        type: "text",
-        content: "Python can read and write files."
+        type: "list", items: [
+          "Prefer const for values that won't change",
+          "Use === and !== instead of == and !=",
+          "Keep functions small and single-purpose",
+          "Use meaningful variable names",
+          "Write comments for WHY, not WHAT",
+          "Format code consistently (use a linter / Prettier)"
+        ]
       },
-      {
-        type: "heading",
-        content: "Reading a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "r") as f:\n    content = f.read()\n    print(content)`
-      },
-      {
-        type: "heading",
-        content: "Writing to a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "w") as f:\n    f.write("Hello World")`
-      }
+      { type: "heading", content: "Security basics" },
+      { type: "list", items: ["Never eval() untrusted input", "Escape user input when adding to HTML to prevent XSS"] }
     ]
   },
   {
-    id: "exception-handling",
-    title: "Exception Handling",
+    id: "next-steps",
+    title: "Next Steps & Learning Path",
     sections: [
-      {
-        type: "text",
-        content: "Handle errors gracefully with try-except blocks."
-      },
-      {
-        type: "code",
-        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nfinally:\n    print("This always runs")`
-      }
+      { type: "text", content: "After basics, practice by building small projects: To‑Do app, calculator, a small game, or a data fetcher to display API data." },
+      { type: "list", items: ["Learn DOM deeply (forms, events, performance)", "Learn modern tooling: npm, bundlers (Vite/webpack)", "Learn a front-end framework: React / Vue / Svelte", "Learn Node.js basics for backend"] },
+      { type: "heading", content: "How I would teach this to a class 1 student vs B.Tech" },
+      { type: "text", content: "For class 1: use stories, analogies, and live playgrounds (like codepen) with instant visual feedback. For B.Tech: include engine internals, complexity, memory model, and module resolution. This document mixes both: simple analogies followed by technical notes in each section." }
     ]
   }
 ];
+
+// Export for use in other files if desired (uncomment in module environment)
+// export default topics;
 
 function Basics_js() {
   const [activeTopic, setActiveTopic] = useState(topics[0].id);
@@ -575,7 +339,7 @@ function Basics_js() {
     <div className="python-container">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1 className="sidebar-title">Python Basics</h1>
+          <h1 className="sidebar-title">Basics JavaScript</h1>
           <p className="sidebar-subtitle">Complete Learning Guide</p>
         </div>
 

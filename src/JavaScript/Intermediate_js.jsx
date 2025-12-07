@@ -4,7 +4,7 @@ import "/src/python_css/Basics.css";
 const topics = [
   {
     id: "intro",
-    title: "Introduction to JavaScript",
+    title: "Introduction to Python",
     sections: [
       {
         type: "text",
@@ -87,428 +87,152 @@ const topics = [
       }
     ]
   },
+  // ... (basic topics omitted here for brevity - original basic topics go above)
+
+  // ------------------ INTERMEDIATE TOPICS ------------------
   {
-    id: "variables",
-    title: "Variables",
+    id: "intermediate-intro",
+    title: "Intermediate Python — Overview",
     sections: [
       {
         type: "text",
-        content: "Variables are containers that store data in a program."
-      },
-      {
-        type: "heading",
-        content: "Example"
-      },
-      {
-        type: "code",
-        content: `name = "Amit"    # String\nage = 10         # Integer\npi = 3.14        # Float`
-      },
-      {
-        type: "heading",
-        content: "Naming Rules"
-      },
-      {
-        type: "list",
-        items: [
-          "Cannot start with a number",
-          "Case-sensitive (Name ≠ name)",
-          "Use meaningful names",
-          "Use letters, numbers, and underscores only"
-        ]
-      },
-      {
-        type: "code",
-        content: `# Wrong\n1name = "Amit"\n\n# Correct\nname1 = "Amit"\nstudent_name = "Amit"`
+        content: "These intermediate topics build upon basics and prepare you for real-world projects: object-oriented design, advanced data structures, modules & packages, file and network IO, testing, and asynchronous programming. Explanations include simple analogies and concrete code examples so beginners and advanced students both benefit."
       }
     ]
   },
   {
-    id: "data-types",
-    title: "Data Types",
+    id: "o-o-p",
+    title: "Object-Oriented Programming (OOP)",
     sections: [
-      {
-        type: "text",
-        content: "A data type tells Python what kind of data is stored in a variable."
-      },
-      {
-        type: "heading",
-        content: "Common Data Types"
-      },
-      {
-        type: "datatype",
-        name: "Integer (int)",
-        desc: "Whole numbers",
-        code: `x = 10\ny = -5`
-      },
-      {
-        type: "datatype",
-        name: "Float (float)",
-        desc: "Decimal numbers",
-        code: `pi = 3.14\ntemp = -2.5`
-      },
-      {
-        type: "datatype",
-        name: "String (str)",
-        desc: "Text in quotes",
-        code: `name = "Amit"\ngreeting = 'Hello'`
-      },
-      {
-        type: "datatype",
-        name: "Boolean (bool)",
-        desc: "True or False",
-        code: `is_raining = True\nis_sunny = False`
-      },
-      {
-        type: "datatype",
-        name: "List (list)",
-        desc: "Ordered collection",
-        code: `fruits = ["apple", "banana"]\nnumbers = [1, 2, 3]`
-      },
-      {
-        type: "datatype",
-        name: "Dictionary (dict)",
-        desc: "Key-value pairs",
-        code: `student = {\n  "name": "Amit",\n  "age": 12\n}`
-      },
-      {
-        type: "heading",
-        content: "Check Data Type"
-      },
-      {
-        type: "code",
-        content: `x = 10\nprint(type(x))  # <class 'int'>`
-      }
+      { type: "text", content: "OOP lets you model real-world things using classes and objects. It's about bundling data and behavior together." },
+      { type: "heading", content: "Class & Object" },
+      { type: "code", content: `class Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        print(self.name + ' makes a sound')\n\ndog = Animal('Buddy')\ndog.speak()` },
+      { type: "heading", content: "Inheritance & Polymorphism" },
+      { type: "code", content: `class Dog(Animal):\n    def speak(self):\n        print(self.name + ' barks')\n\nmydog = Dog('Rex')\nmydog.speak()  # Rex barks` },
+      { type: "heading", content: "Encapsulation & Private Members" },
+      { type: "text", content: "Use naming conventions (e.g., _hidden or __very_hidden) to indicate private attributes; use properties for controlled access." },
+      { type: "code", content: `class BankAccount:\n    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.__balance = balance\n    def deposit(self, amt):\n        self.__balance += amt\n    def get_balance(self):\n        return self.__balance` }
     ]
   },
   {
-    id: "operators",
-    title: "Operators",
+    id: "data-structures-advanced",
+    title: "Advanced Data Structures",
     sections: [
-      {
-        type: "text",
-        content: "Operators perform operations on values and variables."
-      },
-      {
-        type: "heading",
-        content: "Arithmetic Operators"
-      },
-      {
-        type: "code",
-        content: `+   # Addition\n-   # Subtraction\n*   # Multiplication\n/   # Division\n%   # Modulo\n**  # Exponent\n//  # Floor division`
-      },
-      {
-        type: "heading",
-        content: "Comparison Operators"
-      },
-      {
-        type: "code",
-        content: `==  # Equal to\n!=  # Not equal\n>   # Greater than\n<   # Less than\n>=  # Greater or equal\n<=  # Less or equal`
-      },
-      {
-        type: "heading",
-        content: "Example"
-      },
-      {
-        type: "code",
-        content: `a = 10\nb = 5\n\nprint(a + b)   # 15\nprint(a ** 2)  # 100\nprint(a > b)   # True`
-      }
+      { type: "text", content: "Beyond lists and dicts: Sets, Tuples, NamedTuples, deque, defaultdict, Counter, and heapq are essential for efficient code." },
+      { type: "code", content: `from collections import deque, defaultdict, Counter\nfrom heapq import heappush, heappop\n\nq = deque([1,2,3])\nq.appendleft(0)\n\nd = defaultdict(list)\nd['a'].append(1)\n\nc = Counter([1,2,2,3])\nprint(c[2])  # 2` },
+      { type: "heading", content: "When to use which" },
+      { type: "list", items: ["Use set for unique items and fast membership checks", "Use deque for fast pops from both ends", "Use heapq for priority queues"] }
     ]
   },
   {
-    id: "strings",
-    title: "Strings",
+    id: "comprehensions",
+    title: "List / Dict / Set Comprehensions & Generator Expressions",
     sections: [
-      {
-        type: "text",
-        content: "Strings are text enclosed in quotes."
-      },
-      {
-        type: "code",
-        content: `name = "Python"\ngreeting = 'Hello'`
-      },
-      {
-        type: "heading",
-        content: "String Indexing"
-      },
-      {
-        type: "code",
-        content: `text = "Hello"\nprint(text[0])   # H\nprint(text[-1])  # o`
-      },
-      {
-        type: "heading",
-        content: "String Operations"
-      },
-      {
-        type: "code",
-        content: `# Concatenation\nnew_text = "Hello" + " World"\n\n# Repetition\nrepeat = "Hi" * 3  # HiHiHi`
-      }
+      { type: "text", content: "Comprehensions provide concise syntax for building collections; generator expressions compute items lazily." },
+      { type: "code", content: `squares = [x*x for x in range(10)]\nsquare_gen = (x*x for x in range(10))\nd = {x: x*x for x in range(5)}\nunique = {x for x in [1,2,2,3]}  # {1,2,3}` },
+      { type: "heading", content: "Kid-friendly" },
+      { type: "text", content: "Comprehensions are like magic boxes that make a new list from an old one using a recipe (the expression)." }
     ]
   },
   {
-    id: "string-methods",
-    title: "String Methods",
+    id: "functions-advanced",
+    title: "Functions — Advanced (args, kwargs, decorators, closures)",
     sections: [
-      {
-        type: "text",
-        content: "String methods help you work with text easily."
-      },
-      {
-        type: "method",
-        name: "upper() & lower()",
-        code: `text = "Hello"\nprint(text.upper())  # HELLO\nprint(text.lower())  # hello`
-      },
-      {
-        type: "method",
-        name: "strip()",
-        code: `text = "  Python  "\nprint(text.strip())  # Python`
-      },
-      {
-        type: "method",
-        name: "replace()",
-        code: `text = "Hello"\nprint(text.replace("H", "Y"))  # Yello`
-      },
-      {
-        type: "method",
-        name: "split()",
-        code: `text = "Hello World"\nprint(text.split())  # ['Hello', 'World']`
-      }
+      { type: "text", content: "Understand flexible parameter handling, decorators for modifying behavior, and closures for stateful functions." },
+      { type: "code", content: `def func(a, b=2, *args, **kwargs):\n    print(a, b, args, kwargs)\n\ndef decorator(fn):\n    def wrapper(*a, **k):\n        print('Before')\n        res = fn(*a, **k)\n        print('After')\n        return res\n    return wrapper\n\n@decorator\ndef greet(name):\n    print('Hello', name)` },
+      { type: "heading", content: "Practical use" },
+      { type: "list", items: ["Decorators: logging, memoization, access control", "Closures: factories, callbacks with memory"] }
     ]
   },
   {
-    id: "lists",
-    title: "Lists",
+    id: "file-network-io",
+    title: "File Handling & Network I/O (requests, sockets)",
     sections: [
-      {
-        type: "text",
-        content: "Lists store multiple values in a single variable."
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nnumbers = [1, 2, 3, 4]\nmixed = [1, "apple", 3.5, True]`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `fruits = ["apple", "mango", "banana"]\nprint(fruits[0])   # apple\nprint(fruits[-1])  # banana`
-      },
-      {
-        type: "heading",
-        content: "Modifying Lists"
-      },
-      {
-        type: "code",
-        content: `fruits[1] = "orange"      # Change\nfruits.append("grapes")   # Add\nfruits.remove("apple")    # Remove`
-      }
+      { type: "text", content: "Reading/writing files, working with CSV/JSON, and fetching data from the web are everyday tasks." },
+      { type: "code", content: `# Files\nwith open('notes.txt','w') as f:\n    f.write('hello')\n\n# JSON\nimport json\nobj = {'a':1}\nwith open('data.json','w') as f:\n    json.dump(obj, f)\n\n# Requests (HTTP)\nimport requests\nres = requests.get('https://api.github.com')\nprint(res.status_code)` },
+      { type: "heading", content: "CSV" },
+      { type: "code", content: `import csv\nwith open('data.csv') as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)` }
     ]
   },
   {
-    id: "list-methods",
-    title: "List Methods",
+    id: "errors-exceptions-advanced",
+    title: "Exception Handling & Assertions",
     sections: [
-      {
-        type: "method",
-        name: "append()",
-        code: `fruits = ["apple"]\nfruits.append("banana")\nprint(fruits)  # ['apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "insert()",
-        code: `fruits.insert(0, "mango")\nprint(fruits)  # ['mango', 'apple', 'banana']`
-      },
-      {
-        type: "method",
-        name: "sort()",
-        code: `nums = [3, 1, 2]\nnums.sort()\nprint(nums)  # [1, 2, 3]`
-      },
-      {
-        type: "method",
-        name: "reverse()",
-        code: `nums.reverse()\nprint(nums)  # [3, 2, 1]`
-      }
+      { type: "text", content: "Use exceptions to handle unexpected situations and assertions to document assumptions during development." },
+      { type: "code", content: `try:\n    risky()\nexcept (ValueError, TypeError) as e:\n    print('Handled', e)\nelse:\n    print('No error')\nfinally:\n    cleanup()` },
+      { type: "heading", content: "Custom Exceptions" },
+      { type: "code", content: `class AppError(Exception):\n    pass\n\nraise AppError('Something went wrong')` }
     ]
   },
   {
-    id: "dictionaries",
-    title: "Dictionaries",
+    id: "iterators-generators",
+    title: "Iterators & Generators",
     sections: [
-      {
-        type: "text",
-        content: "Dictionaries store data in key-value pairs."
-      },
-      {
-        type: "code",
-        content: `student = {\n  "name": "Amit",\n  "age": 12,\n  "class": 7\n}`
-      },
-      {
-        type: "heading",
-        content: "Accessing Items"
-      },
-      {
-        type: "code",
-        content: `print(student["name"])  # Amit\nprint(student["age"])   # 12`
-      },
-      {
-        type: "heading",
-        content: "Modifying Dictionary"
-      },
-      {
-        type: "code",
-        content: `student["age"] = 13        # Change\nstudent["grade"] = "A"     # Add\ndel student["class"]       # Remove`
-      }
+      { type: "text", content: "Generators let you produce values on-the-fly using yield — great for large data and streaming." },
+      { type: "code", content: `def count_up_to(n):\n    i = 1\n    while i <= n:\n        yield i\n        i += 1\n\nfor x in count_up_to(5):\n    print(x)` },
+      { type: "heading", content: "Use cases" },
+      { type: "list", items: ["Streaming big files", "Pipelines that process data step-by-step"] }
     ]
   },
   {
-    id: "conditions",
-    title: "Conditions (if/elif/else)",
+    id: "concurrency",
+    title: "Concurrency — threading, multiprocessing, asyncio",
     sections: [
-      {
-        type: "text",
-        content: "Conditions allow Python to make decisions."
-      },
-      {
-        type: "code",
-        content: `x = 10\n\nif x > 5:\n    print("Big")\nelif x == 5:\n    print("Equal")\nelse:\n    print("Small")\n\n# Output: Big`
-      },
-      {
-        type: "heading",
-        content: "Combining Conditions"
-      },
-      {
-        type: "code",
-        content: `if x > 5 and x < 15:\n    print("x is between 5 and 15")`
-      }
+      { type: "text", content: "Learn the difference between threads (shared memory), processes (separate memory), and asyncio (cooperative multitasking)." },
+      { type: "code", content: `# Thread example\nimport threading\ndef job():\n    print('working')\nthread = threading.Thread(target=job)\nthread.start()\n\n# Asyncio example\nimport asyncio\nasync def main():\n    await asyncio.sleep(1)\n    print('done')\nasyncio.run(main())` },
+      { type: "heading", content: "When to use" },
+      { type: "list", items: ["IO-bound: use asyncio or threading", "CPU-bound: use multiprocessing"] }
     ]
   },
   {
-    id: "loops",
-    title: "Loops (for/while)",
+    id: "testing-debugging",
+    title: "Testing & Debugging",
     sections: [
-      {
-        type: "text",
-        content: "Loops repeat actions multiple times."
-      },
-      {
-        type: "heading",
-        content: "For Loop"
-      },
-      {
-        type: "code",
-        content: `for i in range(5):\n    print(i)\n\n# Output: 0, 1, 2, 3, 4`
-      },
-      {
-        type: "heading",
-        content: "While Loop"
-      },
-      {
-        type: "code",
-        content: `x = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Output: 0, 1, 2, 3, 4`
-      }
+      { type: "text", content: "Write tests to catch regressions and use debuggers to inspect runtime behavior." },
+      { type: "code", content: `# unittest example\nimport unittest\n\nclass TestMath(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(1+1, 2)\n\nif __name__ == '__main__':\n    unittest.main()` },
+      { type: "heading", content: "Tools" },
+      { type: "list", items: ["pytest — modern testing framework", "pdb — interactive debugger", "logging module for production logs"] }
     ]
   },
   {
-    id: "functions",
-    title: "Functions",
+    id: "packaging-env",
+    title: "Packaging, Virtual Environments & Dependencies",
     sections: [
-      {
-        type: "text",
-        content: "Functions are reusable blocks of code."
-      },
-      {
-        type: "heading",
-        content: "Creating a Function"
-      },
-      {
-        type: "code",
-        content: `def greet(name):\n    print("Hello", name)`
-      },
-      {
-        type: "heading",
-        content: "Using a Function"
-      },
-      {
-        type: "code",
-        content: `greet("Amit")  # Output: Hello Amit`
-      },
-      {
-        type: "heading",
-        content: "Functions with Return"
-      },
-      {
-        type: "code",
-        content: `def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)  # 15`
-      }
+      { type: "text", content: "Use virtual environments to isolate projects, and pip/requirements.txt or pyproject.toml to manage dependencies." },
+      { type: "code", content: `# create venv\npython -m venv env\n# activate (Windows)\n# env\\Scripts\\activate\n# install\npip install requests\n# freeze\npip freeze > requirements.txt` },
+      { type: "heading", content: "Publishing" },
+      { type: "text", content: "Package your library using setuptools or poetry and publish to PyPI if needed." }
     ]
   },
   {
-    id: "modules",
-    title: "Modules",
+    id: "typing",
+    title: "Type Hints & Static Checking",
     sections: [
-      {
-        type: "text",
-        content: "Modules are Python files containing functions and variables."
-      },
-      {
-        type: "heading",
-        content: "Using Math Module"
-      },
-      {
-        type: "code",
-        content: `import math\n\nprint(math.sqrt(16))   # 4.0\nprint(math.ceil(4.2))  # 5\nprint(math.floor(4.8)) # 4\nprint(math.pi)         # 3.14159...`
-      },
-      {
-        type: "heading",
-        content: "Using Random Module"
-      },
-      {
-        type: "code",
-        content: `import random\n\nprint(random.randint(1, 10))  # Random number\nprint(random.choice([1,2,3])) # Random choice`
-      }
+      { type: "text", content: "Type hints help document APIs and enable static analysis with tools like mypy." },
+      { type: "code", content: `def greet(name: str) -> str:\n    return 'Hello ' + name\n\nfrom typing import List\ndef total(nums: List[int]) -> int:\n    return sum(nums)` },
+      { type: "heading", content: "Practical tip" },
+      { type: "text", content: "Start with a few key modules typed and expand as the codebase grows. Type hints are optional but very helpful." }
     ]
   },
   {
-    id: "file-handling",
-    title: "File Handling",
+    id: "security",
+    title: "Security Basics",
     sections: [
-      {
-        type: "text",
-        content: "Python can read and write files."
-      },
-      {
-        type: "heading",
-        content: "Reading a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "r") as f:\n    content = f.read()\n    print(content)`
-      },
-      {
-        type: "heading",
-        content: "Writing to a File"
-      },
-      {
-        type: "code",
-        content: `with open("file.txt", "w") as f:\n    f.write("Hello World")`
-      }
+      { type: "text", content: "Understand common security pitfalls: input validation, injection attacks, secure handling of secrets, and safe deserialization." },
+      { type: "list", items: ["Never trust user input", "Use parameterized queries for databases", "Avoid eval() on untrusted strings", "Store secrets in environment variables"] }
     ]
   },
   {
-    id: "exception-handling",
-    title: "Exception Handling",
+    id: "next-steps-intermediate",
+    title: "Projects & Next Steps",
     sections: [
-      {
-        type: "text",
-        content: "Handle errors gracefully with try-except blocks."
-      },
-      {
-        type: "code",
-        content: `try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nfinally:\n    print("This always runs")`
-      }
+      { type: "text", content: "Practice by building: a web scraper, a REST API with Flask/FastAPI, a CLI tool, and small data pipelines. Combine topics: OOP + testing + packaging + async IO." },
+      { type: "list", items: ["Build a REST API and test it", "Write a scraper that stores results in a database", "Create a command-line utility and package it"] }
     ]
   }
 ];
+
+// export default topics;
 
 function Intermediate_js() {
   const [activeTopic, setActiveTopic] = useState(topics[0].id);
