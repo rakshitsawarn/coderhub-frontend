@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/css_files/Python.css";
+import "../css_files/Python.css";
 import { useNavigate, Link } from "react-router-dom";
 
 function Python() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/python_css/Projects.css";
+import "../python_css/Projects.css";
 import { Link } from "react-router-dom";
 
 

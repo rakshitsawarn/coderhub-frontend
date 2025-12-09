@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/src/python_css/Roadmap.css";
+import "../python_css/Roadmap.css";
 import { Link } from "react-router-dom";
 
 

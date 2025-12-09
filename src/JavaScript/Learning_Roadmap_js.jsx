@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/src/javascript_css/learning_roadmap_js.css";
+import "../javascript_css/learning_roadmap_js.css";
 import { Link } from "react-router-dom";
 
 

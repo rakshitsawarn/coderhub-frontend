@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/java_css/Projects_java.css";
+import "../java_css/Projects_java.css";
 import { Link } from "react-router-dom";
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/css_files/Languages.css";
+import "../css_files/Languages.css";
 import { Link } from "react-router-dom";
 import { Search, X, Code2, Sparkles, TrendingUp, Zap } from "lucide-react";
 

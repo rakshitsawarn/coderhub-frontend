@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import "/src/css_files/DailyQuiz.css";
+import "../css_files/DailyQuiz.css";
 import { Link } from "react-router-dom";
 
 import CodeIDE from "./CodeIDE";

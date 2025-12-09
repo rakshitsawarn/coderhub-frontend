@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/src/python_css/Basics.css";
+import "../python_css/Basics.css";
 
 const topics = [
   {

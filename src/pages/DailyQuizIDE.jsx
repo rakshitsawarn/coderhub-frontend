@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import CodeIDE from "/src/pages/CodeIDE";
-import "/src/css_files/dailyquizide.css";
+import "../pages/CodeIDE";
+import "../css_files/dailyquizide.css";
 
 function DailyQuizIDE() {
     const location = useLocation();

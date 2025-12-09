@@ -1,5 +1,5 @@
 import React from "react";
-import "/src/css_files/premium_projects.css";
+import "../css_files/premium_projects.css";
 import { Lock, Sparkles, Crown, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 

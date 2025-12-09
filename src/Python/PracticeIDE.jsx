@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CodeIDE from "/src/pages/CodeIDE";
-import "/src/python_css/PracticeIDE.css";
+import CodeIDE from "../pages/CodeIDE";
+import "../python_css/PracticeIDE.css";
 
 function PracticeIDE() {
   const { id } = useParams();
