@@ -10,9 +10,9 @@ function Profile() {
 
 
   const languageTotals = {
-    Python: 250,
-    Java: 301,
-    JavaScript: 301,
+    python: 250,
+    java: 301,
+    javascript: 301,
   };
 
 
@@ -58,7 +58,9 @@ function Profile() {
   // Calculate total progress
   const totalSolved = user.languages?.reduce((acc, lang) => acc + lang.solved, 0) || 0;
   const totalProblems = user.languages?.reduce((acc, lang) => {
-    const langTotal = languageTotals[lang.name] || lang.total || 0;
+    // Normalize language name to lowercase for lookup
+    const langKey = lang.name.toLowerCase();
+    const langTotal = languageTotals[langKey] || lang.total || 0;
     return acc + langTotal;
   }, 0);
 
@@ -66,7 +68,6 @@ function Profile() {
 
   return (
     <div className="profile-container">
-      {/* Animated Background */}
       <div className="profile-background">
         <div className="profile-grid"></div>
         <div className="profile-gradient-orb orb-1"></div>
@@ -74,7 +75,7 @@ function Profile() {
         <div className="profile-gradient-orb orb-3"></div>
       </div>
 
-      {/* Header Navigation */}
+
       <div className="profile-header-nav">
         <button className="back-button-profile" onClick={() => navigate(-1)}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -84,7 +85,6 @@ function Profile() {
         </button>
       </div>
 
-      {/* Profile Header */}
       <div className="profile-header-section">
         <div className="profile-card">
           <div className="profile-card-banner"></div>
@@ -126,7 +126,7 @@ function Profile() {
           </div>
         </div>
 
-        {/* Stats Overview */}
+
         <div className="profile-stats-grid">
           <div className="stat-card">
             <div className="stat-icon-wrapper blue">
@@ -225,7 +225,8 @@ function Profile() {
                 <div className="quick-stats-list">
                   {user.languages.slice(0, 3).map((lang, i) => {
                     // Use languageTotals map to get correct total
-                    const totalForLang = languageTotals[lang.name] || lang.total || 0;
+                    const langKey = lang.name.toLowerCase();
+                    const totalForLang = languageTotals[langKey] || lang.total || 0;
                     const percent = Math.round((lang.solved / totalForLang) * 100);
 
                     return (
@@ -261,7 +262,8 @@ function Profile() {
               <div className="languages-grid">
                 {user.languages.map((lang, i) => {
                   // Use languageTotals for correct total
-                  const totalForLang = languageTotals[lang.name] || lang.total || 0;
+                  const langKey = lang.name.toLowerCase();
+                  const totalForLang = languageTotals[langKey] || lang.total || 0;
                   const percent = totalForLang > 0 ? Math.round((lang.solved / totalForLang) * 100) : 0;
 
                   return (
