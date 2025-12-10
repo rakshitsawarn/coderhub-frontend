@@ -12,8 +12,8 @@ function Profile() {
   // At the top of your Profile.jsx
   const languageTotals = {
     Python: 250,
-    Java: 200,
-    JavaScript: 120,
+    Java: 301,
+    JavaScript: 301,
   };
 
 
