@@ -9,7 +9,6 @@ function Profile() {
   const [activeTab, setActiveTab] = useState("overview");
 
 
-  // At the top of your Profile.jsx
   const languageTotals = {
     Python: 250,
     Java: 301,
@@ -26,7 +25,6 @@ function Profile() {
       return;
     }
 
-    // Fetch full user profile
     axios
       .get(`https://coderhub-backend-1.onrender.com/api/auth/profile/${userId}`)
       .then((res) => {
