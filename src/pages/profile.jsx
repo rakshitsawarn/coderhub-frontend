@@ -13,11 +13,7 @@ function Profile() {
   const languageTotals = {
     Python: 250,
     Java: 200,
-    "C++": 150,
-    C: 100,
-    "C#": 80,
     JavaScript: 120,
-    Dart: 60,
   };
 
 
